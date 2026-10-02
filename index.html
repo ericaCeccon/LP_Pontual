@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="modo-escuro" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pontual | Gestão de equipes</title>
+
+    <link rel="icon" type="image/png" href="logo_pontual_transparente.png">
+
+    <!-- FONTES GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">    
+
+    <!-- CONTROLE INICIAL DO TEMA -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('pontual-theme');
+
+            var theme = saved || (
+                window.matchMedia('(prefers-color-scheme: light)').matches
+                    ? 'light'
+                    : 'dark'
+            );
+
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'light') {
+                document.documentElement.classList.remove('modo-escuro');
+                document.documentElement.classList.add('modo-claro');
+            } else {
+                document.documentElement.classList.remove('modo-claro');
+                document.documentElement.classList.add('modo-escuro');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- FUNDO DECORATIVO -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- HERO V2 -->
+
+    <section class="landing-alt">
+
+        <div class="hero-alt">
+
+            <div class="shape-alt shape-blue"></div>
+            <div class="shape-alt shape-pink"></div>
+            <div class="shape-alt shape-yellow"></div>
+            <div class="shape-alt shape-purple"></div>
+
+
+            <header class="header-alt">
+
+                <div class="logos-alt">
+
+                    <a href="#inicio" class="logo">
+                        <img src="img/logo_pontual_transparente.png"
+                             alt="Pontual"
+                             class="logo-light">
+                        <img src="img/logo_dark.png"
+                             alt="Pontual"
+                             class="logo-dark">
+                    </a>
+
+                    <a href="#inicio" class="logo">
+                        <img src="img/Pontual-Branco.png"
+                             alt="Pontual"
+                             class="logo-light">
+                        <img src="img/Pontual-Branco.png"
+                             alt="Pontual"
+                             class="logo-dark"
+                             style="filter: brightness(0) saturate(100%);">
+                    </a>
+
+                </div>
+
+
+                <div class="nav-alt">
+
+                    <a href="#inicio">Início</a>
+
+                    <a href="#funcionalidades">
+                        Funcionalidades
+                    </a>
+
+                    <a href="#sobre">
+                        Sobre nós
+                    </a>
+
+                    <a href="#como-funciona">
+                        Como funciona
+                    </a>
+
+                   
+                </div>
+
+
+                <div class="header-actions">
+
+                    <!-- BOTÃO DE TEMA -->
+
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Alternar tema claro/escuro"
+                        title="Alternar tema">
+
+                        <!-- ÍCONE SOL -->
+
+                        <svg
+                            class="icon-sun"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <circle cx="12" cy="12" r="4"></circle>
+
+                            <line x1="12" y1="2" x2="12" y2="4"></line>
+                            <line x1="12" y1="20" x2="12" y2="22"></line>
+
+                            <line x1="4.93" y1="4.93"
+                                  x2="6.34" y2="6.34"></line>
+
+                            <line x1="17.66" y1="17.66"
+                                  x2="19.07" y2="19.07"></line>
+
+                            <line x1="2" y1="12"
+                                  x2="4" y2="12"></line>
+
+                            <line x1="20" y1="12"
+                                  x2="22" y2="12"></line>
+
+                            <line x1="4.93" y1="19.07"
+                                  x2="6.34" y2="17.66"></line>
+
+                            <line x1="17.66" y1="6.34"
+                                  x2="19.07" y2="4.93"></line>
+
+                        </svg>
+
+
+                        <!-- ÍCONE LUA -->
+
+                        <svg
+                            class="icon-moon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3
+                                     7 7 0 0 0 21 12.79z">
+                            </path>
+
+                        </svg>
+
+                    </button>
+
+
+                    <!-- BOTÃO ENTRAR -->
+
+                    <button class="login-alt">
+                        Entrar
+                        <span>↗</span>
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <div class="hero-content-alt">
+
+                <h1>
+                    Sua equipe<br>
+                    Seu ritmo<br>
+                    <span>Seu Pontual</span>
+                </h1>
+
+                <p>
+                    Simplifique escalas, turnos e controle de ponto
+                    em uma única experiência.
+                </p>
+
+
+                <div class="hero-buttons-alt">
+
+                    <a href="#funcionalidades"
+                       class="btn-primary-alt">
+
+                        Conheça a plataforma
+                        <span>→</span>
+
+                    </a>
+
+                    <a href="#como-funciona"
+                       class="btn-secondary-alt">
+
+                        Explorar recursos
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-bottom-alt">
+
+                <div class="bottom-item-alt">
+                    <strong>01</strong>
+                    <span>Planeje</span>
+                </div>
+
+                <div class="bottom-line-alt"></div>
+
+                <div class="bottom-item-alt">
+                    <strong>02</strong>
+                    <span>Publique</span>
+                </div>
+
+                <div class="bottom-line-alt"></div>
+
+                <div class="bottom-item-alt">
+                    <strong>03</strong>
+                    <span>Acompanhe</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MARQUEE -->
+
+    <div class="marquee">
+
+        <div>
+            PONTUAL
+            <span>✦</span>
+
+            GESTÃO
+            <span>✦</span>
+
+            ORGANIZAÇÃO
+            <span>✦</span>
+
+            EFICIÊNCIA
+            <span>✦</span>
+
+            PONTUAL
+            <span>✦</span>
+        </div>
+
+    </div>
+
+
+    <!-- FRASE PRINCIPAL -->
+
+    <section class="big-statement">
+
+        <div class="statement-glow"></div>
+
+        <span>
+            <img src="img/Pontual-Branco.png"
+                 alt=""
+                 width="200"
+                 class="logo-light">
+            <img src="img/Pontual-Branco.png"
+                 alt=""
+                 width="200"
+                 class="logo-dark"
+                 style="filter: brightness(0) saturate(100%);">
+        </span>
+
+        <h2>
+            Porque cada
+            <strong>minuto</strong>
+            importa.
+        </h2>
+
+        <p class="statement-subtitle">
+            Gestão eficiente começa com organização.
+        </p>
+
+    </section>
+
+
+    <!-- RECURSOS -->
+
+    <section class="resources" id="funcionalidades">
+
+        <div class="section-top">
+
+            <div>
+
+                <span> RECURSOS</span>
+
+                <h2>
+                    Feito para
+                    <br>
+                    <strong>funcionar.</strong>
+                </h2>
+
+            </div>
+
+            <p>
+                Ferramentas pensadas para tornar
+                cada etapa da gestão mais clara.
+            </p>
+
+        </div>
+
+
+        <div class="resource-list">
+
+
+            <article class="resource-item">
+
+                <div class="resource-index">
+                    01
+                </div>
+
+                <div class="resource-name">
+
+                    <h3>Escalas</h3>
+
+                    <p>
+                        Planejamento de turnos
+                        de forma organizada.
+                    </p>
+
+                </div>
+
+                <div class="resource-icon">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="resource-item">
+
+                <div class="resource-index">
+                    02
+                </div>
+
+                <div class="resource-name">
+
+                    <h3>Ponto</h3>
+
+                    <p>
+                        Acompanhamento da jornada
+                        dos colaboradores.
+                    </p>
+
+                </div>
+
+                <div class="resource-icon">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="resource-item">
+
+                <div class="resource-index">
+                    03
+                </div>
+
+                <div class="resource-name">
+
+                    <h3>Presença</h3>
+
+                    <p>
+                        Check-in e controle
+                        de presença da equipe.
+                    </p>
+
+                </div>
+
+                <div class="resource-icon">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="resource-item">
+
+                <div class="resource-index">
+                    04
+                </div>
+
+                <div class="resource-name">
+
+                    <h3>Gestão</h3>
+
+                    <p>
+                        Informações centralizadas
+                        para decisões melhores.
+                    </p>
+
+                </div>
+
+                <div class="resource-icon">
+                    ↗
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- SOLUÇÃO -->
+
+    <section class="solution" id="sobre">
+
+        <div class="solution-left">
+
+            <span class="label">
+                SOBRE NÓS
+            </span>
+
+            <h2>
+                Menos complicação.
+                <br>
+                <strong>Mais controle.</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="solution-right">
+
+            <p>
+                O Pontual foi pensado para conectar gestores
+                e colaboradores em uma experiência simples,
+                organizada e eficiente.
+            </p>
+
+            <p>
+                Centralize escalas, horários, presença e
+                informações da equipe em uma única plataforma.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMO FUNCIONA -->
+
+    <section class="process" id="como-funciona">
+
+        <div class="process-title">
+
+            <span class="label">
+                COMO FUNCIONA
+            </span>
+
+            <h2>
+                Do planejamento
+                <br>
+                <strong>à execução.</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="process-list">
+
+
+            <div class="process-item">
+
+                <span>01</span>
+
+                <div>
+
+                    <h3>Planeje</h3>
+
+                    <p>
+                        Organize os horários e escalas
+                        da sua equipe.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <span>02</span>
+
+                <div>
+
+                    <h3>Publique</h3>
+
+                    <p>
+                        Compartilhe as escalas
+                        com seus colaboradores.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <span>03</span>
+
+                <div>
+
+                    <h3>Acompanhe</h3>
+
+                    <p>
+                        Tenha controle da jornada
+                        e presença em tempo real.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA FINAL -->
+
+    <section class="final-cta brand-bg" id="comece">
+
+        <div class="cta-background-text">
+            PONTUAL
+        </div>
+
+
+        <div class="cta-content">
+
+            <h2>
+                Faça sua gestão
+                <br>
+                acontecer.
+            </h2>
+
+            <button class="primary-button">
+
+                Acessar plataforma
+
+                <span>↗</span>
+                
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <img
+            src="img/logo_pontual_transparente.png"
+            alt="Pontual"
+            class="logo-light">
+        <img
+            src="img/logo_dark.png"
+            alt="Pontual"
+            class="logo-dark">
+
+
+        <div class="footer-links">
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#funcionalidades">
+                Funcionalidades
+            </a>
+
+            <a href="#como-funciona">
+                Como funciona
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 Pontual
+        </p>
+
+    </footer>
+
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar para o topo" title="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- SCRIPT PRINCIPAL -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
