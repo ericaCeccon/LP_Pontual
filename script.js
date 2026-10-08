@@ -114,3 +114,89 @@ document.addEventListener('mousemove', (e) => {
         cardTwo.style.transform = `rotate(5deg) translate(${x * 2}px, ${y * 2}px)`;
     }
 });
+
+
+// ============================
+// ACORDEON DE RECURSOS (ESCALAS, PONTO, PRESENÇA, GESTÃO)
+// ============================
+const resourceItems = document.querySelectorAll('.resource-item');
+
+if (resourceItems.length > 0) {
+    resourceItems.forEach(item => {
+        const header = item.querySelector('.resource-header');
+        if (!header) return;
+
+        header.addEventListener('click', () => {
+            const isCurrentlyActive = item.classList.contains('active');
+
+            // Fecha os outros itens para experiência de sanfona fluida
+            resourceItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                const otherHeader = otherItem.querySelector('.resource-header');
+                if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+            });
+
+            // Alterna o item clicado
+            if (!isCurrentlyActive) {
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+}
+
+
+// ============================================
+// SIMULAÇÃO DO SMARTPHONE (RELÓGIO & PONTO)
+// ============================================
+
+function updatePhoneScreenClock() {
+    const clockEl = document.getElementById('screen-clock');
+    const topTimeEl = document.getElementById('screen-top-time');
+    const dateEl = document.getElementById('screen-date');
+
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    if (clockEl) {
+        clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    if (topTimeEl) {
+        topTimeEl.textContent = `${hours}:${minutes}`;
+    }
+
+    if (dateEl) {
+        const days = ['Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado'];
+        const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        const dayName = days[now.getDay()];
+        const dayNum = now.getDate();
+        const monthName = months[now.getMonth()];
+        dateEl.textContent = `${dayName}, ${dayNum} De ${monthName}`;
+    }
+}
+
+// Inicia o relógio em tempo real
+updatePhoneScreenClock();
+setInterval(updatePhoneScreenClock, 1000);
+
+// Simulação de registro de ponto interativo
+window.triggerPunchSimulation = function () {
+    const btn = document.getElementById('interactive-punch-btn');
+    const btnText = document.getElementById('punch-btn-text');
+    if (!btn || !btnText) return;
+
+    if (btn.classList.contains('punched')) return;
+
+    btn.classList.add('punched');
+    const originalText = btnText.textContent;
+    btnText.textContent = '✓ PONTO REGISTRADO!';
+
+    setTimeout(() => {
+        btn.classList.remove('punched');
+        btnText.textContent = originalText;
+    }, 3000);
+};
+
