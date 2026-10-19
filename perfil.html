@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="modo-escuro" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pontual | Perfis de Acesso & Governança</title>
+    <link rel="icon" type="image/png" href="logo_pontual_transparente.png" />
+
+    <!-- FONTES GOOGLE (EXATAMENTE AS MESMAS DO INDEX.HTML) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CONTROLE INICIAL DO TEMA -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('pontual-theme');
+            var theme = saved || (
+                window.matchMedia('(prefers-color-scheme: light)').matches
+                    ? 'light'
+                    : 'dark'
+            );
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'light') {
+                document.documentElement.classList.remove('modo-escuro');
+                document.documentElement.classList.add('modo-claro');
+            } else {
+                document.documentElement.classList.remove('modo-claro');
+                document.documentElement.classList.add('modo-escuro');
+            }
+        })();
+    </script>
+</head>
+
+<body class="profiles-page">
+
+    <!-- FUNDO DECORATIVO E LUZES AMBIENTES -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="header-alt profiles-sticky-header">
+        <div class="logos-alt">
+            <a href="index.html#inicio" class="logo">
+                <img src="img/logo_pontual_transparente.png" alt="Pontual" class="logo-light">
+                <img src="img/logo_dark.png" alt="Pontual" class="logo-dark">
+            </a>
+
+            <a href="index.html#inicio" class="logo">
+                <img src="img/Pontual-Branco.png" alt="Pontual" class="logo-light">
+                <img src="img/Pontual-Branco.png" alt="Pontual" class="logo-dark" style="filter: brightness(0) saturate(100%);">
+            </a>
+        </div>
+
+        <nav class="nav-alt">
+            <a href="index.html#inicio">Início</a>
+            <a href="index.html#funcionalidades">Funcionalidades</a>
+            <a href="index.html#sobre">Sobre nós</a>
+            <a href="index.html#como-funciona">Como funciona</a>
+            <a href="perfil.html" class="active-link">Perfis</a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- BOTÃO DE TEMA -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="12" y1="2" x2="12" y2="4"></line>
+                    <line x1="12" y1="20" x2="12" y2="22"></line>
+                    <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line>
+                    <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line>
+                    <line x1="2" y1="12" x2="4" y2="12"></line>
+                    <line x1="20" y1="12" x2="22" y2="12"></line>
+                    <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line>
+                    <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>
+                </svg>
+
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <!-- BOTÃO ENTRAR -->
+            <button class="login-alt">
+                Entrar
+                <span>↗</span>
+            </button>
+        </div>
+    </header>
+
+    
+
+    <!-- TÍTULO PRINCIPAL CENTRALIZADO AO MEIO -->
+    <section class="profiles-hero-centered">
+        <h1 class="profiles-hero-title">
+            O perfil certo para cada papel<br>
+            <span>na sua operação</span>
+        </h1>
+
+        <p class="profiles-hero-desc">
+            Três níveis de acesso desenhados sob medida para garantir governança estratégica no RH, autonomia de liderança para gestores e agilidade transparente para cada colaborador.
+        </p>
+    </section>
+
+   <div class="profile-buttons">
+    <button class="profile-button empresa" id="empresa">Empresa/RH</button>
+    <button class="profile-button gestor" id="gestor">Gestor</button>
+    <button class="profile-button colaborador" id="colaborador">Colaborador</button>
+</div>
+
+    <!-- CONTAINER DOS CARDS TRANSLÚCIDOS EMPILHADOS UM EMBAIXO DO OUTRO -->
+    <main class="stacked-profiles-container">
+
+        <!-- ========================================================
+             CARD 01: PERFIL EMPRESA / RH
+             ======================================================== -->
+        <article class="translucent-card card-rh-translucent" id="perfil-empresa-rh">
+    
+            <div class="card-hero-header" id="empresa">
+                
+                <h2 class="card-main-title">Perfil Empresa / RH </h2>
+                <p class="card-subtitle-line">Visão corporativa macro, parametrização de acessos e conformidade jurídica</p>
+            </div>
+
+            
+            <!-- GRID DOS 5 RECURSOS E RESPONSABILIDADES (LARGOS E ESPALHADOS) -->
+            <div class="features-frosted-grid">
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Gestão de Pessoas &amp; Acessos</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Cadastra novos colaboradores no sistema, define regimes contratuais (CLT 44h, PJ 160h, Temporário), define departamentos e atribui permissões (RH, Gestor, Colaborador).
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Vinculação de Hierarquia</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Associa quais gestores são responsáveis por quais colaboradores e equipes.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Auditoria de Escalas</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Visualiza a grade geral de escalas de todos os setores  para auditoria de carga horária e conformidade, mantendo a autonomia da escala nas mãos dos gestores operacionais.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Aprovações &amp; Atestados</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Acesso corporativo ao arquivo e histórico de atestados médicos (com CID, anexos em PDF/imagem e pareceres) e justificativas de toda a organização.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Relatórios Consolidados</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Emissão e exportação (CSV/relatórios) de dados de presença, assiduidade, absenteísmo e horas trabalhadas por departamento para fechamento contábil e de folha.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- ========================================================
+             CARD 02: PERFIL GESTOR
+             ======================================================== -->
+        <article class="translucent-card card-gestor-translucent"  >
+
+            <!-- CABEÇALHO DO PERFIL -->
+            <div class="card-hero-header" id="gestor">
+                <h2 class="card-main-title">Perfil Gestor</h2>
+                <p class="card-subtitle-line">Planejamento dinâmico de turnos, cobertura de plantões e liderança setorial</p>
+            </div>
+
+
+            <div class="features-frosted-grid" >
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Criação e Gestão de Escalas</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Criação, edição, publicação e exclusão de turnos na grade matricial e no calendário orbital. Define horários de entrada, saída, intervalo, plantões, reuniões e treinamentos.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Gestão de Demandas &amp; Aprovações</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Analisa e decide (aprova ou recusa com feedback formal) solicitações de folga, trocas de turno entre colaboradores e atestados médicos de ausência.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Lembretes &amp; Tarefas</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Cria compromissos, tarefas, avisos de projeto e plantões direcionados aos colaboradores de sua equipe.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Acompanhamento em Tempo Real</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Monitora se os colaboradores realizaram o check-in no horário correto, identifica atrasos e faltas, e acompanha a meta de horas da semana.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Chat da Equipe</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Canal de comunicação direta com os colaboradores para orientações rápidas e alinhamentos operacionais sem sair da grade de turnos.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- ========================================================
+             CARD 03: PERFIL COLABORADOR
+             ======================================================== -->
+        <article class="translucent-card card-colab-translucent" id="colaborador">
+            
+            <!-- CABEÇALHO DO PERFIL -->
+            <div class="card-hero-header">
+                <h2 class="card-main-title">Perfil Colaborador</h2>
+                <p class="card-subtitle-line">Autonomia no ponto digital GPS, transparência total e solicitações instantâneas</p>
+            </div>
+
+           
+
+            <!-- GRID DOS 5 RECURSOS E RESPONSABILIDADES (LARGOS E ESPALHADOS) -->
+            <div class="features-frosted-grid">
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Registro de Ponto Digital</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Bate ponto no turno do dia com validação de geolocalização (GPS) e endereço de confirmação com respaldo jurídico.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Minha Presença, Calendário &amp; Escala</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Visualiza sua agenda de trabalho (modo semanal ou mensal completo), com horários detalhados, intervalos, status de presença e barra de progresso da meta de horas semanais.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Solicitações de Folgas &amp; Trocas de Turno</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Solicita folgas planejadas ou propõe a troca de turno com outro colega de mesma função para posterior aprovação do gestor.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Envio de Atestados &amp; Justificativas</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Anexa comprovantes médicos ou justificativas em PDF/imagem diretamente pelo app, acompanhando o parecer emitido pela liderança.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Comunicação</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Chat direto com seu gestor imediato e canal com o RH para dúvidas contratuais ou operacionais sem burocracia.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    
+
+    <!-- CTA FINAL (ESTILO INDEX.HTML) -->
+    <section class="final-cta brand-bg" id="comece">
+        <div class="cta-background-text">
+            PONTUAL
+        </div>
+
+        <div class="cta-content">
+            <h2>
+                Conecte toda a sua equipe<br>
+                ao ritmo da produtividade.
+            </h2>
+
+            <button class="primary-button">
+                Acessar plataforma
+                <span>↗</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER (ESTILO INDEX.HTML) -->
+    <footer>
+        <div class="footer-left">
+            <div class="footer-brand">
+                <img src="img/logo_pontual_transparente.png" alt="Pontual" class="logo-light footer-logo-img">
+                <img src="img/logo_dark.png" alt="Pontual" class="logo-dark footer-logo-img">
+            </div>
+            <span class="footer-bullet">•</span>
+            <span class="footer-tagline">Sistema Corporativo de Gestão de Escalas &amp; Ponto Digital GPS</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html#inicio">Início</a>
+            <a href="index.html#funcionalidades">Recursos</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="perfil.html" class="footer-link-highlight">Perfis de Acesso</a>
+        </div>
+
+        <p class="footer-copy">
+            © 2026 Pontual. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar para o topo" title="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
