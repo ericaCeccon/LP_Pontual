@@ -501,6 +501,13 @@
     }
 
 }
+.hero-buttons-agr{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 32px;
+    color: #ffffff;
+}
 
 .btn-primary-alt span {
 
