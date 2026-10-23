@@ -109,7 +109,8 @@
    <div class="profile-buttons">
     <button class="profile-button empresa" id="empresa">Empresa/RH</button>
     <button class="profile-button gestor" id="gestor">Gestor</button>
-    <button class="profile-button colaborador" id="colaborador">Colaborador</button>
+    <button class="profile-button colaborador" id="colaborador">Colaborador CLT</button>
+    <button class="profile-button colaborador" id="colaboradorPJ">Colaborador PJ</button>
 </div>
 
     <!-- CONTAINER DOS CARDS TRANSLÚCIDOS EMPILHADOS UM EMBAIXO DO OUTRO -->
@@ -118,9 +119,9 @@
         <!-- ========================================================
              CARD 01: PERFIL EMPRESA / RH
              ======================================================== -->
-        <article class="translucent-card card-rh-translucent" id="perfil-empresa-rh">
+        <article class="translucent-card card-rh-translucent" id="perfil-empresa-rh" id="empresa">
     
-            <div class="card-hero-header" id="empresa">
+            <div class="card-hero-header">
                 
                 <h2 class="card-main-title">Perfil Empresa / RH </h2>
                 <p class="card-subtitle-line">Visão corporativa macro, parametrização de acessos e conformidade jurídica</p>
@@ -315,7 +316,7 @@
             
             <!-- CABEÇALHO DO PERFIL -->
             <div class="card-hero-header">
-                <h2 class="card-main-title">Perfil Colaborador</h2>
+                <h2 class="card-main-title">Perfil Colaborador CLT</h2>
                 <p class="card-subtitle-line">Autonomia no ponto digital GPS, transparência total e solicitações instantâneas</p>
             </div>
 
@@ -404,6 +405,106 @@
                 </div>
             </div>
         </article>
+
+         <!-- ========================================================
+             CARD 03: PERFIL COLABORADOR
+             ======================================================== -->
+        <article class="translucent-card card-colab-translucent" id="colaborador">
+            
+            <!-- CABEÇALHO DO PERFIL -->
+            <div class="card-hero-header">
+                <h2 class="card-main-title">Perfil Colaborador PJ</h2>
+                <p class="card-subtitle-line">Autonomia no ponto digital GPS, transparência total e solicitações instantâneas</p>
+            </div>
+
+           
+
+            <!-- GRID DOS 5 RECURSOS E RESPONSABILIDADES (LARGOS E ESPALHADOS) -->
+            <div class="features-frosted-grid">
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Registro de Ponto Digital</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Bate ponto no turno do dia com validação de geolocalização (GPS) e endereço de confirmação com respaldo jurídico.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Minha Presença, Calendário &amp; Escala</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Visualiza sua agenda de trabalho (modo semanal ou mensal completo), com horários detalhados, intervalos, status de presença e barra de progresso da meta de horas semanais.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Solicitações de Folgas &amp; Trocas de Turno</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Solicita folgas planejadas ou propõe a troca de turno com outro colega de mesma função para posterior aprovação do gestor.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Envio de Atestados &amp; Justificativas</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Anexa comprovantes médicos ou justificativas em PDF/imagem diretamente pelo app, acompanhando o parecer emitido pela liderança.
+                    </p>
+                </div>
+
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Comunicação</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Chat direto com seu gestor imediato e canal com o RH para dúvidas contratuais ou operacionais sem burocracia.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        
+
 
     </main>
 
