@@ -174,7 +174,8 @@ function updatePhoneScreenClock() {
         const dayName = days[now.getDay()];
         const dayNum = now.getDate();
         const monthName = months[now.getMonth()];
-        dateEl.textContent = `${dayName}, ${dayNum} De ${monthName}`;
+        const year = now.getFullYear();
+        dateEl.textContent = `${dayName}, ${dayNum} De ${monthName} De ${year}`;
     }
 }
 
@@ -192,11 +193,36 @@ window.triggerPunchSimulation = function () {
 
     btn.classList.add('punched');
     const originalText = btnText.textContent;
-    btnText.textContent = '✓ PONTO REGISTRADO!';
+    btnText.textContent = '✓ Entrada Registrada!';
 
     setTimeout(() => {
         btn.classList.remove('punched');
         btnText.textContent = originalText;
     }, 3000);
 };
+
+// Navegação suave entre perfis na pagina perfil.html
+const profileNavButtons = [
+    { btnId: 'btn-empresa', targetId: 'perfil-empresa-rh' },
+    { btnId: 'btn-gestor', targetId: 'perfil-gestor' },
+    { btnId: 'btn-colaborador', targetId: 'perfil-colaborador-clt' },
+    { btnId: 'btn-colaboradorPJ', targetId: 'perfil-colaborador-pj' }
+];
+
+profileNavButtons.forEach(item => {
+    const btn = document.getElementById(item.btnId);
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const target = document.getElementById(item.targetId);
+            if (target) {
+                const headerHeight = 90;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
 

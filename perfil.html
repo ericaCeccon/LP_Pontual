@@ -106,11 +106,12 @@
         </p>
     </section>
 
-   <div class="profile-buttons">
-    <button class="profile-button empresa" id="empresa">Empresa/RH</button>
-    <button class="profile-button gestor" id="gestor">Gestor</button>
-    <button class="profile-button colaborador" id="colaborador">Colaborador</button>
-</div>
+    <div class="profile-buttons">
+        <button class="profile-button empresa" id="btn-empresa" type="button">Empresa/RH</button>
+        <button class="profile-button gestor" id="btn-gestor" type="button">Gestor</button>
+        <button class="profile-button colaborador-clt" id="btn-colaborador" type="button">Colaborador CLT</button>
+        <button class="profile-button colaborador-pj" id="btn-colaboradorPJ" type="button">Colaborador PJ</button>
+    </div>
 
     <!-- CONTAINER DOS CARDS TRANSLÚCIDOS EMPILHADOS UM EMBAIXO DO OUTRO -->
     <main class="stacked-profiles-container">
@@ -120,7 +121,7 @@
              ======================================================== -->
         <article class="translucent-card card-rh-translucent" id="perfil-empresa-rh">
     
-            <div class="card-hero-header" id="empresa">
+            <div class="card-hero-header">
                 
                 <h2 class="card-main-title">Perfil Empresa / RH </h2>
                 <p class="card-subtitle-line">Visão corporativa macro, parametrização de acessos e conformidade jurídica</p>
@@ -132,8 +133,11 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -148,8 +152,12 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+                                <rect x="2" y="17" width="6" height="4" rx="1"></rect>
+                                <rect x="16" y="17" width="6" height="4" rx="1"></rect>
+                                <path d="M12 7v4"></path>
+                                <path d="M5 17v-3a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -164,8 +172,9 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -173,15 +182,17 @@
                         </div>
                     </div>
                     <p class="feature-item-desc">
-                        Visualiza a grade geral de escalas de todos os setores  para auditoria de carga horária e conformidade, mantendo a autonomia da escala nas mãos dos gestores operacionais.
+                        Visualiza a grade geral de escalas de todos os setores para auditoria de carga horária e conformidade, mantendo a autonomia da escala nas mãos dos gestores operacionais.
                     </p>
                 </div>
 
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="m9 15 2 2 4-4"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -196,8 +207,11 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                                <line x1="2" y1="20" x2="22" y2="20"></line>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -215,21 +229,29 @@
         <!-- ========================================================
              CARD 02: PERFIL GESTOR
              ======================================================== -->
-        <article class="translucent-card card-gestor-translucent"  >
+        <article class="translucent-card card-gestor-translucent" id="perfil-gestor">
 
             <!-- CABEÇALHO DO PERFIL -->
-            <div class="card-hero-header" id="gestor">
+            <div class="card-hero-header">
                 <h2 class="card-main-title">Perfil Gestor</h2>
                 <p class="card-subtitle-line">Planejamento dinâmico de turnos, cobertura de plantões e liderança setorial</p>
             </div>
 
 
-            <div class="features-frosted-grid" >
+            <div class="features-frosted-grid">
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                <path d="M8 14h.01"></path>
+                                <path d="M12 14h.01"></path>
+                                <path d="M16 14h.01"></path>
+                                <path d="M8 18h.01"></path>
+                                <path d="M12 18h.01"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -244,8 +266,9 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -260,8 +283,9 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -276,8 +300,8 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -292,8 +316,8 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -311,11 +335,11 @@
         <!-- ========================================================
              CARD 03: PERFIL COLABORADOR
              ======================================================== -->
-        <article class="translucent-card card-colab-translucent" id="colaborador">
+        <article class="translucent-card card-colab-translucent" id="perfil-colaborador-clt">
             
             <!-- CABEÇALHO DO PERFIL -->
             <div class="card-hero-header">
-                <h2 class="card-main-title">Perfil Colaborador</h2>
+                <h2 class="card-main-title">Perfil Colaborador CLT</h2>
                 <p class="card-subtitle-line">Autonomia no ponto digital GPS, transparência total e solicitações instantâneas</p>
             </div>
 
@@ -326,8 +350,9 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -342,8 +367,11 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -358,8 +386,11 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m17 2 4 4-4 4"></path>
+                                <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+                                <path d="m7 22-4-4 4-4"></path>
+                                <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -374,8 +405,8 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -390,8 +421,8 @@
                 <div class="feature-frosted-item">
                     <div class="feature-item-header">
                         <div class="feature-item-icon-wrap">
-                            <svg viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                             </svg>
                         </div>
                         <div class="feature-item-title">
@@ -404,6 +435,114 @@
                 </div>
             </div>
         </article>
+
+         <!-- ========================================================
+             CARD 04: PERFIL COLABORADOR PJ 
+             ======================================================== -->
+        <article class="translucent-card card-pj-translucent" id="perfil-colaborador-pj">
+            
+            <!-- CABEÇALHO DO PERFIL -->
+            <div class="card-hero-header">
+                <h2 class="card-main-title">Perfil Colaborador PJ</h2>
+                <p class="card-subtitle-line">O Pontual não obriga quem é PJ a bater ponto como CLT. Criamos uma experiência moderna e sob medida: focada em entregas, cota de horas e faturamento transparente.</p>
+            </div>
+
+            <!-- GRID DOS 5 RECURSOS E RESPONSABILIDADES (MESMO LAYOUT DOS DEMAIS PERFIS) -->
+            <div class="features-frosted-grid">
+                <!-- 1. Previsão de Faturamento em Tempo Real -->
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Previsão de Faturamento em Tempo Real</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        O prestador acompanha exatamente quanto vai receber no mês. Com base no valor/hora e na cota contratada, ele visualiza o progresso das horas trabalhadas, o valor homologado e uma calculadora de ganhos integrada.
+                    </p>
+                </div>
+
+                <!-- 2. Timesheet por Projetos & Entregas -->
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Timesheet por Projetos &amp; Entregas</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Sem controle rígido de ponto! O PJ registra suas demandas com cronômetro inteligente ou entrada manual, anexando links de entregas (Figma, GitHub, Docs) e comprovantes de execução para homologação do gestor.
+                    </p>
+                </div>
+
+                <!-- 3. Autonomia de Agenda e Escala Pessoal -->
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Autonomia de Agenda e Escala Pessoal</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        O prestador organiza sua própria rotina de trabalho através de uma agenda e calendário interativo com timeline, sem subordinação e com total liberdade para definir seus turnos e horários.
+                    </p>
+                </div>
+
+                <!-- 4. Bloco de Notas Integrado à Nuvem -->
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Bloco de Notas Integrado à Nuvem</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Um espaço exclusivo de organização pessoal com cadernos visuais para anotar ideias, criar listas de tarefas do dia a dia e manter tudo salvo automaticamente em nuvem.
+                    </p>
+                </div>
+
+                <!-- 5. Comunicação & Alinhamento Direto -->
+                <div class="feature-frosted-item">
+                    <div class="feature-item-header">
+                        <div class="feature-item-icon-wrap">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-item-title">
+                            <strong>Comunicação &amp; Alinhamento Direto</strong>
+                        </div>
+                    </div>
+                    <p class="feature-item-desc">
+                        Canal ágil com gestores de projetos e contratantes para tirar dúvidas contratuais, validar entregas e alinhar demandas com rapidez e transparência.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        
+
 
     </main>
 
