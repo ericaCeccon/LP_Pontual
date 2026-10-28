@@ -654,20 +654,78 @@
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
+    /* Header não acompanha o site no mobile (permanece no topo sem seguir o scroll) */
+    .profiles-sticky-header,
+    header.header-alt {
+        position: relative !important;
+        top: auto !important;
+        z-index: 10;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: transparent !important;
+    }
+
     .landing-alt {
         padding: 10px;
     }
 
     .hero-alt {
-        min-height: 640px;
+        min-height: auto;
+        padding-bottom: 40px;
         border-radius: 22px;
     }
 
     .header-alt {
-        padding: 16px;
+        padding: 14px 16px 12px 16px;
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logos-alt {
+        margin-left: 0 !important;
+        gap: 8px !important;
+        height: auto;
+    }
+
+    .logos-alt .logo {
+        height: auto;
+    }
+
+    .logos-alt .logo:first-child img {
+        width: 38px !important;
+        height: 38px !important;
+        max-width: 38px !important;
+        max-height: 38px !important;
+    }
+
+    .logos-alt .logo:last-child img {
+        width: 110px !important;
+        max-width: 110px !important;
+        height: auto !important;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .theme-toggle svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .login-alt {
+        padding: 7.5px 14px;
+        font-size: 12.5px;
+        font-weight: 700;
+        border-radius: 18px;
     }
 
     .nav-alt {
@@ -681,7 +739,8 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
-        padding: 4px 2px;
+        padding: 4px 2px 2px 2px;
+        margin-top: 2px;
     }
 
     .nav-alt::-webkit-scrollbar {
@@ -689,16 +748,38 @@
     }
 
     .nav-alt a {
-        font-size: 12.5px;
+        font-size: 12px;
+        font-weight: 600;
         flex-shrink: 0;
-        padding: 6px 12px;
-        border-radius: 20px;
+        padding: 6px 13px;
+        border-radius: 18px;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #d1d5db;
+        transition: all 0.2s ease;
     }
 
-    .login-alt {
-        padding: 9px 17px;
+    .nav-alt a.active,
+    .nav-alt a.active-link {
+        background: rgba(245, 146, 66, 0.18);
+        border-color: rgba(245, 146, 66, 0.5);
+        color: #f59e0b;
+    }
+
+    [data-theme="light"] .nav-alt a,
+    .modo-claro .nav-alt a {
+        background: rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 0, 0, 0.1);
+        color: #374151;
+    }
+
+    [data-theme="light"] .nav-alt a.active,
+    .modo-claro .nav-alt a.active,
+    [data-theme="light"] .nav-alt a.active-link,
+    .modo-claro .nav-alt a.active-link {
+        background: rgba(245, 146, 66, 0.14);
+        border-color: rgba(245, 146, 66, 0.45);
+        color: #b45309;
     }
 
     .login-alt:hover {
@@ -706,31 +787,21 @@
     }
 
     .hero-content-alt {
-
-        padding: 40px 20px;
-
+        padding: 30px 16px;
     }
 
     .tag-alt {
-
         font-size: 8px;
-
         text-align: center;
-
     }
 
     .hero-content-alt h1 {
-
-        font-size: 43px;
-
-        letter-spacing: -2px;
-
+        font-size: 40px;
+        letter-spacing: -1.5px;
     }
 
     .hero-content-alt p {
-
         font-size: 14px;
-
     }
 
     .hero-buttons-alt,
@@ -5010,22 +5081,24 @@ a {
     border-radius: 2px;
 }
 
-/* Header Sticky Adaptativo (sem linha divisória) */
-.profiles-sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(52px);
-    border-bottom: none;
-    transition: background 0.3s ease;
-}
+/* Header Sticky Apenas no Desktop (No mobile permanece fixo no topo do documento sem acompanhar o scroll) */
+@media (min-width: 769px) {
+    .profiles-sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(52px);
+        border-bottom: none;
+        transition: background 0.3s ease;
+    }
 
-[data-theme="light"] .profiles-sticky-header,
-.modo-claro .profiles-sticky-header {
-    background: rgba(250, 248, 245, 0.88);
-    border-bottom: none;
+    [data-theme="light"] .profiles-sticky-header,
+    .modo-claro .profiles-sticky-header {
+        background: rgba(250, 248, 245, 0.88);
+        border-bottom: none;
+    }
 }
 
 /* =========================================
