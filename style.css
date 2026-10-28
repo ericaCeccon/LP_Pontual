@@ -653,7 +653,7 @@
 }
 
 @media (max-width: 768px) {
-    /* Header no mobile: estático no topo, organizado com logo à esquerda, tema e login menores no canto direito, e opções no meio na mesma configuração do modo notebook */
+    /* Header no mobile: estático no topo, com logo menor à esquerda e ao lado do entrar e ícone de tema na mesma linha, e opções no meio no estilo notebook */
     .profiles-sticky-header,
     header.header-alt {
         position: relative !important;
@@ -662,61 +662,64 @@
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         background: transparent !important;
-        padding: 16px 20px 10px 20px !important;
+        padding: 12px 16px 6px 16px !important;
         display: flex !important;
         flex-wrap: wrap !important;
         align-items: center !important;
         justify-content: space-between !important;
-        row-gap: 14px !important;
-        column-gap: 10px !important;
+        row-gap: 8px !important;
+        column-gap: 8px !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    /* Linha 1 - Esquerda: Logo Pontual visível e ajustada */
+    /* Linha 1 - Esquerda: Logo Pontual menor, ao lado do entrar e mudar tema */
     .logos-alt {
         order: 1 !important;
         display: flex !important;
         align-items: center !important;
-        gap: 8px !important;
+        gap: 6px !important;
         margin-left: 0 !important;
         flex-shrink: 0 !important;
         height: auto !important;
+        max-height: 28px !important;
     }
 
     .logos-alt .logo {
         height: auto !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .logos-alt .logo:first-child img {
-        width: 32px !important;
-        height: 32px !important;
-        max-width: 32px !important;
-        max-height: 32px !important;
+        width: 25px !important;
+        height: 25px !important;
+        max-width: 25px !important;
+        max-height: 25px !important;
     }
 
     .logos-alt .logo:last-child img {
-        width: 92px !important;
-        max-width: 92px !important;
+        width: 72px !important;
+        max-width: 72px !important;
         height: auto !important;
     }
 
-    /* Linha 1 - Direita: Mudar tema e Entrar menores e fixados no canto direito */
+    /* Linha 1 - Direita: Mudar tema e Entrar menores, ao lado da logo na mesma linha */
     .header-actions {
         order: 2 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: flex-end !important;
-        gap: 8px !important;
+        gap: 6px !important;
         margin-left: auto !important;
         flex-shrink: 0 !important;
     }
 
     .theme-toggle {
-        width: 32px !important;
-        height: 32px !important;
-        min-width: 32px !important;
-        min-height: 32px !important;
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
         padding: 0 !important;
         display: inline-flex !important;
         align-items: center !important;
@@ -727,25 +730,25 @@
     }
 
     .theme-toggle svg {
-        width: 14px !important;
-        height: 14px !important;
+        width: 13px !important;
+        height: 13px !important;
     }
 
     .login-alt {
-        padding: 6px 12px !important;
-        font-size: 11.5px !important;
+        padding: 4.5px 10px !important;
+        font-size: 11px !important;
         font-weight: 600 !important;
-        border-radius: 20px !important;
+        border-radius: 16px !important;
         letter-spacing: 0.2px !important;
         white-space: nowrap !important;
         display: inline-flex !important;
         align-items: center !important;
-        gap: 4px !important;
+        gap: 3px !important;
     }
 
     .login-alt span {
         margin-left: 2px !important;
-        font-size: 11px !important;
+        font-size: 10px !important;
     }
 
     .login-alt:hover {
@@ -759,13 +762,13 @@
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        gap: 18px !important;
+        gap: 14px !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
         -webkit-overflow-scrolling: touch !important;
         scrollbar-width: none !important;
-        padding: 4px 6px !important;
-        margin: 0 auto !important;
+        padding: 4px 2px !important;
+        margin: 2px auto 0 auto !important;
     }
 
     .nav-alt::-webkit-scrollbar {
@@ -774,7 +777,7 @@
 
     .nav-alt a {
         font-family: "Playfair Display", Georgia, serif !important;
-        font-size: 13.5px !important;
+        font-size: 13px !important;
         font-weight: 600 !important;
         letter-spacing: 0.3px !important;
         text-decoration: none !important;
@@ -782,7 +785,7 @@
         background: transparent !important;
         border: none !important;
         border-radius: 0 !important;
-        padding: 4px 6px !important;
+        padding: 2px 4px !important;
         flex-shrink: 0 !important;
         transition: color 0.25s ease, opacity 0.25s ease !important;
         opacity: 0.88 !important;
@@ -815,38 +818,33 @@
         border: none !important;
     }
 
-    /* Hero fluida, preenchimento total e degradê sem corte preto */
+    /* Hero fluida integrada com o big-statement (sem vazio preto, unidos e contínuos) */
     .landing-alt {
+        min-height: auto !important;
+        height: auto !important;
         padding: 0 !important;
         width: 100% !important;
         overflow: hidden !important;
+        display: block !important;
     }
 
     .hero-alt {
         width: 100% !important;
         min-height: auto !important;
-        padding-top: 10px !important;
-        padding-bottom: 50px !important;
+        height: auto !important;
+        padding-top: 4px !important;
+        padding-bottom: 12px !important;
         border-radius: 0 !important;
         overflow: visible !important;
         position: relative !important;
     }
 
-    /* Suavização fluida do degradê no final da hero */
     .hero-alt::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100px;
-        background: linear-gradient(to bottom, transparent, var(--bg-page));
-        pointer-events: none;
-        z-index: 1;
+        display: none !important;
     }
 
     .hero-content-alt {
-        padding: 30px 20px 20px 20px !important;
+        padding: 16px 16px 6px 16px !important;
         position: relative !important;
         z-index: 2 !important;
         width: 100% !important;
@@ -861,17 +859,17 @@
     }
 
     .hero-content-alt h1 {
-        font-size: clamp(38px, 10vw, 46px) !important;
-        letter-spacing: -1.5px !important;
-        line-height: 1.1 !important;
-        margin-bottom: 14px !important;
+        font-size: clamp(34px, 9.5vw, 42px) !important;
+        letter-spacing: -1.2px !important;
+        line-height: 1.08 !important;
+        margin-bottom: 10px !important;
     }
 
     .hero-content-alt p {
-        font-size: 15px !important;
-        line-height: 1.5 !important;
-        max-width: 320px !important;
-        margin: 0 auto 26px auto !important;
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+        max-width: 310px !important;
+        margin: 0 auto 16px auto !important;
         color: rgba(255, 255, 255, 0.85) !important;
     }
 
@@ -882,16 +880,17 @@
         width: 100% !important;
         align-items: center !important;
         justify-content: center !important;
+        margin: 0 !important;
     }
 
     .btn-primary-alt,
     .btn-secondary-alt {
         width: auto !important;
         max-width: 90% !important;
-        padding: 13px 28px !important;
-        font-size: 13.5px !important;
+        padding: 11px 24px !important;
+        font-size: 13px !important;
         font-weight: 700 !important;
-        border-radius: 30px !important;
+        border-radius: 25px !important;
         justify-content: center !important;
         text-align: center !important;
         display: inline-flex !important;
@@ -900,6 +899,33 @@
 
     .hero-bottom-alt {
         display: none !important;
+    }
+
+    /* Marquee e Big-Statement conectados à hero quase sem vão ("como se estivessem juntos") */
+    .marquee {
+        padding: 8px 0 !important;
+        margin: 0 !important;
+    }
+
+    .big-statement {
+        min-height: auto !important;
+        padding-top: 18px !important;
+        padding-bottom: 40px !important;
+        margin-top: 0 !important;
+    }
+
+    .statement-wrapper {
+        gap: 24px !important;
+    }
+
+    .statement-left h2 {
+        font-size: clamp(34px, 9.5vw, 46px) !important;
+        letter-spacing: -1.5px !important;
+    }
+
+    .statement-subtitle {
+        margin-top: 12px !important;
+        margin-bottom: 16px !important;
     }
 
     /* =========================================
@@ -1426,71 +1452,73 @@ header {
 
 
 /* =========================
-   LOGOS DO HEADER
+   LOGOS DO HEADER (Desktop)
 ========================= */
 
-.logos-alt {
+@media (min-width: 769px) {
+    .logos-alt {
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
+        align-items: center;
 
-    gap: 22px;
+        gap: 22px;
 
-    flex-shrink: 0;
+        flex-shrink: 0;
 
-    margin-left: -35px;
+        margin-left: -35px;
 
-}
+    }
 
-.logos-alt .logo {
+    .logos-alt .logo {
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
+        align-items: center;
 
-    justify-content: center;
+        justify-content: center;
 
-    width: auto;
+        width: auto;
 
-    height: 62px;
+        height: 62px;
 
-}
-
-
-/* Desenho da logo */
-
-.logos-alt .logo:first-child img {
-
-    width: 78px !important;
-
-    height: 78px !important;
-
-    max-width: 78px !important;
-
-    max-height: 78px !important;
-
-    object-fit: contain;
-
-    display: block;
-
-}
+    }
 
 
-/* Escrita "Pontual" */
+    /* Desenho da logo */
 
-.logos-alt .logo:last-child img {
+    .logos-alt .logo:first-child img {
 
-    width: 180px !important;
+        width: 78px;
 
-    height: auto !important;
+        height: 78px;
 
-    max-width: 180px !important;
+        max-width: 78px;
 
-    object-fit: contain;
+        max-height: 78px;
 
-    display: block;
+        object-fit: contain;
 
+        display: block;
+
+    }
+
+
+    /* Escrita "Pontual" */
+
+    .logos-alt .logo:last-child img {
+
+        width: 180px;
+
+        height: auto;
+
+        max-width: 180px;
+
+        object-fit: contain;
+
+        display: block;
+
+    }
 }
 
 
