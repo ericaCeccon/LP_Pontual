@@ -187,18 +187,63 @@ setInterval(updatePhoneScreenClock, 1000);
 window.triggerPunchSimulation = function () {
     const btn = document.getElementById('interactive-punch-btn');
     const btnText = document.getElementById('punch-btn-text');
+    const exitTimeEl = document.getElementById('step-time-exit');
+    const exitItemEl = document.getElementById('step-exit-item');
+    const connector2 = document.getElementById('step-connector-2');
+    const statusBadge = document.getElementById('app-status-badge');
+    const statusText = document.getElementById('app-status-text');
+
     if (!btn || !btnText) return;
 
-    if (btn.classList.contains('punched')) return;
+    if (btn.classList.contains('confirmed')) return;
 
-    btn.classList.add('punched');
+    btn.classList.add('confirmed');
     const originalText = btnText.textContent;
-    btnText.textContent = '✓ Entrada Registrada!';
+    btnText.textContent = 'PRESENÇA CONFIRMADA ✓';
+
+    const originalStatusText = statusText ? statusText.textContent : 'Expediente em andamento';
+
+    if (connector2) {
+        connector2.classList.add('active', 'completed-end');
+    }
+
+    if (exitItemEl) {
+        exitItemEl.classList.add('step-completed', 'shift-end-completed');
+    }
+
+    if (exitTimeEl) {
+        const now = new Date();
+        const hh = String(now.getHours()).padStart(2, '0');
+        const mm = String(now.getMinutes()).padStart(2, '0');
+        exitTimeEl.textContent = `${hh}:${mm}`;
+    }
+
+    if (statusBadge && statusText) {
+        statusBadge.classList.add('shift-ended');
+        statusText.textContent = 'Turno Finalizado (Fim da Jornada)';
+    }
 
     setTimeout(() => {
-        btn.classList.remove('punched');
+        btn.classList.remove('confirmed');
         btnText.textContent = originalText;
-    }, 3000);
+
+        if (connector2) {
+            connector2.classList.remove('active', 'completed-end');
+        }
+
+        if (exitItemEl) {
+            exitItemEl.classList.remove('step-completed', 'shift-end-completed');
+        }
+
+        if (exitTimeEl) {
+            exitTimeEl.textContent = '--:--';
+        }
+
+        if (statusBadge && statusText) {
+            statusBadge.classList.remove('shift-ended');
+            statusText.textContent = originalStatusText;
+        }
+    }, 4500);
 };
 
 // Navegação suave entre perfis na pagina perfil.html

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" class="modo-escuro" data-theme="dark">
 
 <head>
@@ -195,14 +195,14 @@
                 </h1>
 
                 <p>
-                    Simplifique escalas, turnos e controle de ponto
+                    Simplifique escalas, turnos e controle de escalas
                     em uma única experiência.
                 </p>
 
 
                 <div class="hero-buttons-agr">
 
-                    <a href="#inicio"
+                    <a href="#visao"
                        class="btn-primary-alt">
 
                         Conheça a plataforma
@@ -263,17 +263,7 @@
             <!-- Coluna de Texto à Esquerda -->
             <div class="statement-left">
 
-                <div class="statement-brand">
-                    <img src="img/Pontual-Branco.png"
-                         alt="Pontual"
-                         width="190"
-                         class="logo-light">
-                    <img src="img/Pontual-Branco.png"
-                         alt="Pontual"
-                         width="190"
-                         class="logo-dark"
-                         style="filter: brightness(0) saturate(100%);">
-                </div>
+                
 
                 <h2>
                     Porque cada
@@ -284,7 +274,7 @@
                 </h2>
 
                 <p class="statement-subtitle">
-                    Gestão eficiente começa com organização. Toda a sua equipe e o controle de ponto na palma da mão, em tempo real.
+                    Gestão eficiente começa com organização. Toda a sua equipe e escalas na palma da mão, em tempo real.
                 </p>
 
                 <div class="statement-badges">
@@ -292,7 +282,10 @@
                         <span class="badge-dot"></span>
                         <span>Geolocalização GPS Ativa</span>
                     </div>
-                    
+                    <div class="statement-badge-item">
+                        <span class="badge-dot"></span>
+                        <span>Controle de Ponto em Tempo Real</span>
+                    </div>
                 </div>
 
             </div>
@@ -323,111 +316,218 @@
                             <div class="phone-btn-power"></div>
 
                             <!-- Tela do App Pontual (OLED Screen) -->
-                            <div class="phone-screen">
+                            <div class="phone-screen app-mobile-screen">
 
-                                <!-- Barra de Status Superior com Dynamic Island -->
-                                <div class="phone-top-bar">
-                                    <span class="phone-time" id="screen-top-time">15:08</span>
-
-                                    <div class="phone-dynamic-island">
-                                        <div class="island-camera"></div>
+                                <!-- Topo do App: Logo Oficial Pontual + Avatar do Colaborador + Botão de Tema -->
+                                <div class="app-top-header">
+                                    <div class="app-brand-logo-wrap">
+                                        <img src="img/Pontual-Branco.png" alt="Pontual" class="app-brand-logo-img">
                                     </div>
-
-                                    <div class="phone-signals">
-                                        <span class="signal-dot"></span>
-                                        <span>5G</span>
-                                        <span>100%</span>
+                                    <div class="app-header-right">
+                                        <div class="app-avatar-wrapper" title="Lucas Silva">
+                                            <img class="app-avatar-img"
+                                                 src="https://i.pinimg.com/736x/2e/19/56/2e1956804d151a1517133e5df0a2f055.jpg"
+                                                 alt="Lucas Silva"
+                                                 onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80'">
+                                            <span class="app-avatar-online"></span>
+                                        </div>
+                                        <button type="button" class="app-theme-icon-btn" aria-label="Alternar tema">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="5"></circle>
+                                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
 
-                                <!-- Card de Perfil: Lucas Silva (Foto Real) -->
-                                <div class="phone-user-card">
-                                    <div class="phone-user-info">
-                                        <img class="phone-avatar"
-                                             src="https://i.pinimg.com/736x/2e/19/56/2e1956804d151a1517133e5df0a2f055.jpg"
-                                             alt="Lucas Silva"
-                                             onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80'">
-                                        <div>
-                                            <div class="phone-user-name">Lucas Silva</div>
-                                            <div class="phone-user-role">Atendimento Geral</div>
-                                        </div>
+                                <!-- Barra de Ícones / Abas do App -->
+                                <div class="app-tab-navigation">
+                                    <!-- Aba 1: Ponto (Ativa) -->
+                                    <div class="app-nav-tab active">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
                                     </div>
-                                    <span class="phone-user-tag">CLT 40h</span>
-                                </div>
-
-                                <!-- Bloco de Bater Ponto (Fiel à Imagem de Referência) -->
-                                <div class="phone-punch-layout">
-                                    <!-- Relógio com Barra Vertical Laranja & Data -->
-                                    <div class="mockup-clock-wrapper">
-                                        <div class="mockup-clock-bar"></div>
-                                        <div class="mockup-clock-texts">
-                                            <div class="mockup-clock-time" id="screen-clock">15:40:17</div>
-                                            <div class="mockup-clock-date" id="screen-date">Segunda-Feira, 26 De Outubro De 2026</div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Pill / Aviso de Folga Programada -->
-                                    <div class="mockup-shift-notice">
-                                        <svg class="notice-cal-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59242" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <!-- Aba 2: Calendário / Escala -->
+                                    <div class="app-nav-tab">
+                                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                             <line x1="16" y1="2" x2="16" y2="6"></line>
                                             <line x1="8" y1="2" x2="8" y2="6"></line>
                                             <line x1="3" y1="10" x2="21" y2="10"></line>
                                         </svg>
-                                        <span>Você não possui turno escalado para hoje. Folga programada!</span>
                                     </div>
-
-                                    <!-- Card de Ação: Aguardando Início -->
-                                    <div class="mockup-entry-card">
-                                        <!-- Header com Gradiente Laranja/Magenta -->
-                                        <div class="entry-card-header">
-                                            <div class="entry-icon-badge">
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                                    <circle cx="12" cy="12" r="10"></circle>
-                                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                                </svg>
-                                            </div>
-                                            <div class="entry-header-info">
-                                                <div class="entry-header-title">Aguardando Início</div>
-                                                <div class="entry-header-subtitle">Registre sua entrada ao chegar</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Corpo com Botões de Ação -->
-                                        <div class="entry-card-body">
-                                            <button type="button" class="btn-entry-punch" id="interactive-punch-btn" onclick="triggerPunchSimulation()">
-                                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                                    <circle cx="12" cy="12" r="10"></circle>
-                                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                                </svg>
-                                                <span id="punch-btn-text">Registrar Entrada</span>
-                                            </button>
-
-                                            <div class="entry-geo-caption">
-                                                Início da jornada com geolocalização auditável
-                                            </div>
-
-                                            <button type="button" class="btn-entry-history">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
-                                                    <path d="M3 3v5h5"></path>
-                                                    <polyline points="12 7 12 12 15 15"></polyline>
-                                                </svg>
-                                                <span>Meus Registros de Presenças</span>
-                                            </button>
-                                        </div>
+                                    <!-- Aba 3: Trocas / Transferências -->
+                                    <div class="app-nav-tab">
+                                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="17 1 21 5 17 9"></polyline>
+                                            <path d="M3 5h18"></path>
+                                            <polyline points="7 23 3 19 7 15"></polyline>
+                                            <path d="M21 19H3"></path>
+                                        </svg>
+                                    </div>
+                                    <!-- Aba 4: Documentos / Folha -->
+                                    <div class="app-nav-tab">
+                                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        </svg>
+                                    </div>
+                                    <!-- Aba 5: Mensagens (Badge 2) -->
+                                    <div class="app-nav-tab has-pill">
+                                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                        </svg>
+                                        <span class="tab-notification-pill">2</span>
+                                    </div>
+                                    <!-- Aba 6: Notificações (Badge 12) -->
+                                    <div class="app-nav-tab has-pill">
+                                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                        </svg>
+                                        <span class="tab-notification-pill">12</span>
                                     </div>
                                 </div>
 
-                                <!-- Card de Carga Horária Semanal -->
-                                <div class="phone-hours-card">
-                                    <div class="phone-hours-row">
-                                        <span>Carga Horária Semanal</span>
-                                        <span class="phone-hours-val">38h / 40h (95%)</span>
+                                <!-- Bloco de Bater Ponto Pontual (Card Principal Fiel ao App) -->
+                                <div class="app-punch-container">
+
+                                    <!-- Relógio e Data com Indicador Vertical Laranja -->
+                                    <div class="app-clock-row">
+                                        <div class="app-clock-bar"></div>
+                                        <div class="app-clock-meta">
+                                            <div class="app-clock-time" id="screen-clock">16:00:11</div>
+                                            <div class="app-clock-date" id="screen-date">Terça-Feira, 27 De Outubro De 2026</div>
+                                        </div>
                                     </div>
-                                    <div class="phone-progress-bar">
-                                        <div class="phone-progress-fill"></div>
+
+                                    <!-- Pill de Status: Expediente em andamento -->
+                                    <div class="app-status-badge" id="app-status-badge">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
+                                        <span id="app-status-text">Expediente em andamento</span>
                                     </div>
+
+                                    <!-- Stepper da Jornada: Entrada (14:37) -> Em andamento (8h) -> Saída (--:--) -->
+                                    <div class="app-stepper-track" id="app-stepper-track">
+                                        <!-- Entrada (Ativo) -->
+                                        <div class="app-step-item step-completed">
+                                            <div class="app-step-bullet">
+                                                <div class="app-step-dot" id="step-dot-entry"></div>
+                                            </div>
+                                            <div class="app-step-text">
+                                                <span class="app-step-label">Entrada</span>
+                                                <span class="app-step-val" id="step-time-entry">14:37</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="app-step-connector active"></div>
+
+                                        <!-- Em andamento (Ativo) -->
+                                        <div class="app-step-item step-completed">
+                                            <div class="app-step-bullet">
+                                                <div class="app-step-dot"></div>
+                                            </div>
+                                            <div class="app-step-text">
+                                                <span class="app-step-label">Em andamento</span>
+                                                <span class="app-step-val">8h</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="app-step-connector" id="step-connector-2"></div>
+
+                                        <!-- Saída (Pendente / Concluída após clique) -->
+                                        <div class="app-step-item" id="step-exit-item">
+                                            <div class="app-step-bullet">
+                                                <div class="app-step-dot" id="step-dot-exit"></div>
+                                            </div>
+                                            <div class="app-step-text">
+                                                <span class="app-step-label">Saída</span>
+                                                <span class="app-step-val" id="step-time-exit">--:--</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card Principal com Linhas Verticais: Turno de Hoje + Meu Local Atual -->
+                                    <div class="app-details-card">
+                                        <div class="app-card-accent-bar"></div>
+
+                                        <!-- Linha 1: Turno de hoje -->
+                                        <div class="app-card-row">
+                                            <div class="app-row-circle-icon">
+                                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div class="app-row-details">
+                                                <span class="app-row-label">Turno de hoje</span>
+                                                <div class="app-row-val">08:00 – 17:00 (8h)</div>
+                                                <span class="app-row-pill">Comercial (5x2)</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Linha 2: Meu local atual + Botão Como chegar -->
+                                        <div class="app-card-row row-location">
+                                            <div class="app-row-circle-icon">
+                                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                    <circle cx="12" cy="10" r="3"></circle>
+                                                </svg>
+                                            </div>
+                                            <div class="app-row-details">
+                                                <span class="app-row-label">Meu local atual</span>
+                                                <div class="app-row-val bold">BNE</div>
+                                                <div class="app-row-address">Rua Antônio Chemi...</div>
+                                            </div>
+                                            <button type="button" class="app-btn-directions">
+                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                    <circle cx="12" cy="10" r="3"></circle>
+                                                </svg>
+                                                <span>Como chegar</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Botão de Ação Primário: Registrar Saída (100% largura) -->
+                                    <button type="button" class="app-btn-primary" id="interactive-punch-btn" onclick="triggerPunchSimulation()">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                        <span id="punch-btn-text">Registrar Saída</span>
+                                    </button>
+
+                                    <!-- Botão de Ação Secundário: Meus Registros (100% largura) -->
+                                    <button type="button" class="app-btn-secondary">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                            <path d="M3 3v5h5"></path>
+                                            <polyline points="12 7 12 12 15 15"></polyline>
+                                        </svg>
+                                        <span>Meus Registros</span>
+                                    </button>
+
+                                    <!-- Rodapé: Status GPS -->
+                                    <div class="app-gps-row">
+                                        <span class="app-gps-dot"></span>
+                                        <span class="app-gps-text">GPS: Fora (1.2 km)</span>
+                                    </div>
+
                                 </div>
 
                             </div>
