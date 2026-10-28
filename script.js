@@ -271,3 +271,47 @@ profileNavButtons.forEach(item => {
     }
 });
 
+// ============================================
+// LIGHTBOX MODAL PARA IMAGENS (MOBILE & DESKTOP)
+// ============================================
+const lightboxModal = document.getElementById('imageLightboxModal');
+const lightboxImg = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+if (lightboxModal && lightboxImg) {
+    const clickableImages = document.querySelectorAll('.resource-image, .project-photo-wrapper img');
+    clickableImages.forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || 'Visualização do Módulo Pontual';
+            if (lightboxCaption) {
+                lightboxCaption.textContent = img.alt || 'Toque fora ou no X para fechar';
+            }
+            lightboxModal.classList.add('active');
+            lightboxModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeLightbox = () => {
+        lightboxModal.classList.remove('active');
+        lightboxModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            if (lightboxImg) lightboxImg.src = '';
+        }, 200);
+    };
+
+    if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+}
+
+
