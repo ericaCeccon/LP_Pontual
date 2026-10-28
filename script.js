@@ -314,4 +314,62 @@ if (lightboxModal && lightboxImg) {
     });
 }
 
+// ============================================
+// MENU SANDUÍCHE (MOBILE)
+// ============================================
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mainNav = document.getElementById('mainNav');
+const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+if (mobileMenuToggle && mainNav) {
+    const toggleMenu = (open) => {
+        const isOpen = open !== undefined ? open : !mainNav.classList.contains('active');
+        if (isOpen) {
+            mainNav.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            if (mobileNavBackdrop) mobileNavBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mainNav.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    if (mobileNavBackdrop) {
+        mobileNavBackdrop.addEventListener('click', () => toggleMenu(false));
+    }
+
+    // Fechar ao clicar em qualquer link da navegação
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu(false);
+        });
+    });
+
+    // Fechar com a tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+            toggleMenu(false);
+        }
+    });
+
+    // Fechar ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+            toggleMenu(false);
+        }
+    });
+}
+
+
 
