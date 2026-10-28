@@ -1,4 +1,4 @@
-﻿/* =========================================
+/* =========================================
    LANDING HERO ALT
 ========================================= */
 .landing-alt {
@@ -2076,10 +2076,11 @@ header {
    =================================================== */
 
 .big-statement {
-    min-height: 720px;
-    padding: 120px 12%;
+    min-height: 820px;
+    padding: 100px 6%;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background: var(--bg-surface);
@@ -2087,9 +2088,9 @@ header {
 
 .statement-glow {
     position: absolute;
-    width: 650px;
-    height: 650px;
-    right: 5%;
+    width: 750px;
+    height: 750px;
+    right: 8%;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
@@ -2102,10 +2103,12 @@ header {
 
 .statement-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.35fr;
+    grid-template-columns: 1.22fr 1fr;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
     width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
     position: relative;
     z-index: 2;
 }
@@ -2116,6 +2119,8 @@ header {
     flex-direction: column;
     justify-content: center;
     z-index: 5;
+    width: 100%;
+    max-width: 700px;
 }
 
 .statement-brand {
@@ -2123,9 +2128,9 @@ header {
 }
 
 .statement-left h2 {
-    font-size: clamp(44px, 5.5vw, 84px);
-    line-height: 0.92;
-    letter-spacing: -4px;
+    font-size: clamp(60px, 6.2vw, 104px);
+    line-height: 0.94;
+    letter-spacing: -3.5px;
     color: var(--text-primary);
     font-weight: 800;
 }
@@ -2138,39 +2143,39 @@ header {
 }
 
 .statement-subtitle {
-    margin-top: 25px;
+    margin-top: 32px;
     color: var(--text-secondary);
-    font-size: 16.5px;
+    font-size: 21.5px;
     line-height: 1.6;
-    max-width: 480px;
+    max-width: 620px;
 }
 
 .statement-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 32px;
+    gap: 15px;
+    margin-top: 40px;
 }
 
 .statement-badge-item {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.04);
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-soft);
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text-secondary);
 }
 
 .statement-badge-item .badge-dot {
-    width: 7px;
-    height: 7px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: #f89642;
-    box-shadow: 0 0 8px #f89642;
+    box-shadow: 0 0 10px #f89642;
 }
 
 /* Coluna Direita: Showcase com Celular e Cards */
@@ -2300,7 +2305,7 @@ header {
 .phone-mockup {
     position: relative;
     z-index: 3;
-    margin-left: 95px;
+    margin-left: 0;
     transform: perspective(1200px) rotateY(-7deg) rotateX(4deg) rotateZ(-2deg);
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -2311,9 +2316,10 @@ header {
 
 /* Corpo / Chassi Externo do Celular (Equilibrado e com Presença Marcante) */
 .phone-chassis {
-    width: 355px;
+    width: 388px;
+    max-width: 100%;
     background: #18181c;
-    border-radius: 48px;
+    border-radius: 50px;
     padding: 12px;
     position: relative;
     border: 1.5px solid rgba(255, 255, 255, 0.16);
@@ -2323,6 +2329,7 @@ header {
         0 0 50px rgba(245, 146, 66, 0.24),
         inset 0 0 2px 1px rgba(255, 255, 255, 0.15),
         inset 0 0 12px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
 }
 
 /* Botões físicos externos */
@@ -2332,320 +2339,572 @@ header {
     position: absolute;
     background: #28282e;
     border-radius: 3px;
+    z-index: 0;
 }
 
 .phone-btn-vol-up {
     left: -4px;
     top: 112px;
-    width: 3px;
-    height: 40px;
+    width: 4px;
+    height: 42px;
 }
 
 .phone-btn-vol-down {
     left: -4px;
-    top: 164px;
-    width: 3px;
-    height: 40px;
+    top: 168px;
+    width: 4px;
+    height: 42px;
 }
 
 .phone-btn-power {
     right: -4px;
     top: 132px;
-    width: 3px;
-    height: 54px;
+    width: 4px;
+    height: 56px;
 }
 
-/* Tela OLED Interna do Celular (Mais alta e com espaçamento respirável) */
-.phone-screen {
-    background: #0d0d10;
-    border-radius: 39px;
-    padding: 17px 11px 16px 11px;
+/* Tela OLED do Celular */
+.app-mobile-screen {
+    background: radial-gradient(circle at 50% 25%, rgba(136, 19, 55, 0.18) 0%, #0d0d12 70%);
+    border-radius: 40px;
+    padding: 20px 18px 20px 18px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 15px;
+    gap: 16px;
     box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.95);
     font-family: 'Inter', sans-serif;
     color: #ffffff;
-    min-height: 635px;
+    min-height: 685px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-/* Barra de Status */
-.phone-top-bar {
+/* 1. Header do App: Logo Oficial Pontual + Avatar + Botão Tema */
+.app-top-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4px;
+    width: 100%;
+    padding: 2px 2px;
+    box-sizing: border-box;
 }
 
-.phone-time {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.2px;
-}
-
-.phone-dynamic-island {
-    width: 96px;
-    height: 25px;
-    border-radius: 20px;
-    background: #000000;
+.app-brand-logo-wrap {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 10px;
 }
 
-.island-camera {
+.app-brand-logo-img {
+    height: 27px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    filter: brightness(1) contrast(1.05);
+}
+
+.app-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-avatar-wrapper {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.app-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.8px solid rgba(255, 255, 255, 0.22);
+    display: block;
+}
+
+.app-avatar-online {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: #171720;
-    box-shadow: inset 0 0 1px 1px #08080d;
+    background: #10B981;
+    border: 1.5px solid #0d0d12;
 }
 
-.phone-signals {
+.app-theme-icon-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+    background: #181822;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #9ca3af;
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 11.5px;
-    font-weight: 600;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.app-theme-icon-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.app-theme-icon-btn:hover {
     color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.25);
+    background: #222230;
 }
 
-.signal-dot {
-    width: 6.5px;
-    height: 6.5px;
-    border-radius: 50%;
-    background: #10B981;
-}
-
-/* Card: Perfil Lucas Silva */
-.phone-user-card {
-    background: rgba(28, 28, 33, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 12px 15px;
+/* 2. Barra de Ícones / Abas do App */
+.app-tab-navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    padding: 2px 2px;
+    box-sizing: border-box;
 }
 
-.phone-user-info {
+.app-nav-tab {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    color: #71717a;
+    padding: 7px 8px;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.phone-avatar {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #f89642;
-    background: #26262e;
+.app-nav-tab svg {
+    width: 17px;
+    height: 17px;
 }
 
-.phone-user-name {
-    font-size: 14px;
-    font-weight: 700;
+.app-nav-tab:hover {
+    color: #d1d5db;
+}
+
+.app-nav-tab.active {
+    border: 1px solid rgba(245, 146, 66, 0.45);
+    background: linear-gradient(180deg, rgba(245, 146, 66, 0.14) 0%, rgba(136, 19, 55, 0.28) 100%);
+    color: #f59e0b;
+    padding: 8px 12px;
+    box-shadow: 0 0 14px rgba(245, 146, 66, 0.22);
+}
+
+.app-nav-tab.active svg {
+    width: 18px;
+    height: 18px;
+}
+
+.tab-notification-pill {
+    position: absolute;
+    top: -3px;
+    right: -4px;
+    background: #e11d48;
     color: #ffffff;
-    line-height: 1.2;
-}
-
-.phone-user-role {
-    font-size: 12px;
-    color: #8e8e98;
-    margin-top: 2px;
-}
-
-.phone-user-tag {
-    font-size: 11px;
+    font-size: 9.5px;
     font-weight: 700;
-    color: #f87171;
-    background: rgba(159, 36, 60, 0.4);
-    border: 1px solid rgba(209, 56, 93, 0.5);
-    padding: 4px 11px;
-    border-radius: 12px;
-    letter-spacing: 0.3px;
+    border-radius: 10px;
+    padding: 1px 5px;
+    min-width: 14px;
+    text-align: center;
+    line-height: 1.15;
+    border: 1.5px solid #0d0d12;
 }
 
-/* Bloco de Bater Ponto (Fiel à Imagem de Referência) */
-.phone-punch-layout {
+/* 3. Bloco Principal de Ponto (Container com Borda Suave e Espaçamento Agradável) */
+.app-punch-container {
+    background: rgba(18, 18, 24, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 18px 16px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.52);
 }
 
-/* Relógio Central com Barra Vertical Laranja */
-.mockup-clock-wrapper {
+/* Relógio e Data */
+.app-clock-row {
     display: flex;
     align-items: stretch;
     gap: 12px;
-    padding: 3px 5px;
+    width: 100%;
 }
 
-.mockup-clock-bar {
-    width: 4px;
+.app-clock-bar {
+    width: 4.5px;
     background: #F59242;
     border-radius: 4px;
     flex-shrink: 0;
 }
 
-.mockup-clock-texts {
+.app-clock-meta {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.mockup-clock-time {
-    font-size: 36px;
+.app-clock-time {
+    font-size: 38px;
     font-weight: 800;
     color: #ffffff;
-    letter-spacing: -1.2px;
-    line-height: 1.05;
+    letter-spacing: -0.6px;
+    line-height: 1;
     font-family: 'Inter', sans-serif;
+    font-variant-numeric: tabular-nums;
 }
 
-.mockup-clock-date {
-    font-size: 11px;
-    font-weight: 600;
-    color: #a1a1aa;
-    margin-top: 3px;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Pill / Aviso de Folga Programada */
-.mockup-shift-notice {
-    background: rgba(255, 255, 255, 0.045);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 10px 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px;
-    color: #c4c4cc;
+.app-clock-date {
+    font-size: 12px;
     font-weight: 500;
-    line-height: 1.35;
+    color: #d1d5db;
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
 }
 
-.mockup-shift-notice svg {
+/* Badge Expediente em andamento */
+.app-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6.5px 14px;
+    border-radius: 22px;
+    background: rgba(245, 146, 66, 0.08);
+    border: 1px solid rgba(245, 146, 66, 0.35);
+    color: #f59e0b;
+    font-size: 11.5px;
+    font-weight: 600;
+    width: fit-content;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.app-status-badge svg {
+    width: 14px;
+    height: 14px;
+    color: inherit;
     flex-shrink: 0;
 }
 
-/* Card: Aguardando Início */
-.mockup-entry-card {
-    background: #14151d;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
-    display: flex;
-    flex-direction: column;
+.app-status-badge.shift-ended {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.45);
+    color: #34d399;
 }
 
-/* Header do Card com Gradiente Laranja/Magenta */
-.entry-card-header {
-    background: linear-gradient(135deg, #f97316 0%, #db2777 55%, #881337 100%);
-    padding: 11px 14px;
+/* Stepper Horizontal */
+.app-stepper-track {
     display: flex;
     align-items: center;
-    gap: 11px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px 2px;
+    box-sizing: border-box;
 }
 
-.entry-icon-badge {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: #fed7aa;
+.app-step-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.entry-header-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.entry-header-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.2;
-}
-
-.entry-header-subtitle {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.92);
-    margin-top: 2px;
-}
-
-/* Corpo com Botões de Ação */
-.entry-card-body {
-    padding: 13px 13px 14px;
-    display: flex;
-    flex-direction: column;
     gap: 8px;
 }
 
-/* Botão: Registrar Entrada */
-.btn-entry-punch {
+.app-step-bullet {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.app-step-dot {
+    width: 5.5px;
+    height: 5.5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.3s ease;
+}
+
+.app-step-item.step-completed .app-step-bullet {
+    border-color: #F59242;
+    background: rgba(245, 146, 66, 0.15);
+}
+
+.app-step-item.step-completed .app-step-dot {
+    background: #F59242;
+}
+
+/* Quando o turno chega ao fim */
+.app-step-item.shift-end-completed .app-step-bullet {
+    border-color: #10B981;
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.app-step-item.shift-end-completed .app-step-dot {
+    background: #10B981;
+}
+
+.app-step-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-step-label {
+    font-size: 11.5px;
+    color: #9ca3af;
+    font-weight: 500;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.app-step-item.step-completed .app-step-label {
+    color: #d1d5db;
+    font-weight: 600;
+}
+
+.app-step-val {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 2px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.app-step-item.step-completed .app-step-val {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.app-step-item.shift-end-completed .app-step-val {
+    color: #34d399;
+    font-weight: 800;
+}
+
+.app-step-connector {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    margin: 0 8px;
+    min-width: 10px;
+    transition: all 0.3s ease;
+}
+
+.app-step-connector.active {
+    background: #F59242;
+}
+
+.app-step-connector.completed-end {
+    background: linear-gradient(90deg, #F59242 0%, #10B981 100%);
+}
+
+/* Card com Linhas Verticais Empilhadas: Turno de Hoje + Meu Local Atual */
+.app-details-card {
+    background: #14151d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    position: relative;
+    padding: 16px 14px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.app-card-accent-bar {
+    position: absolute;
+    left: 3px;
+    top: 10px;
+    bottom: 10px;
+    width: 4px;
+    background: #F59242;
+    border-radius: 3px;
+}
+
+.app-card-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.app-row-circle-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(245, 146, 66, 0.45);
+    background: rgba(245, 146, 66, 0.08);
+    color: #f59e0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.app-row-circle-icon svg {
+    width: 17px;
+    height: 17px;
+    color: #f59e0b;
+}
+
+.app-row-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.app-row-label {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 500;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.app-row-val {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 3px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.app-row-val.bold {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.app-row-pill {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 9px;
+    border-radius: 11px;
+    background: rgba(245, 146, 66, 0.08);
+    border: 1px solid rgba(245, 146, 66, 0.38);
+    color: #f59e0b;
+    font-size: 9.5px;
+    font-weight: 600;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.app-row-address {
+    font-size: 10.5px;
+    color: #8e8e98;
+    margin-top: 3px;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 135px;
+}
+
+.app-btn-directions {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 9.5px;
+    border-radius: 13px;
+    background: rgba(245, 146, 66, 0.08);
+    border: 1px solid rgba(245, 146, 66, 0.38);
+    color: #f59e0b;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    align-self: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.app-btn-directions:hover {
+    background: rgba(245, 146, 66, 0.16);
+    border-color: rgba(245, 146, 66, 0.6);
+}
+
+.app-btn-directions svg {
+    width: 12px;
+    height: 12px;
+    color: #f59e0b;
+}
+
+/* Botões de Ação Full-Width Empilhados */
+.app-btn-primary {
     width: 100%;
     border: none;
-    background: linear-gradient(135deg, #be123c 0%, #881337 100%);
-    border-radius: 13px;
-    padding: 11.5px 14px;
+    background: linear-gradient(90deg, #881337 0%, #be123c 30%, #ea580c 70%, #f97316 100%);
+    border-radius: 15px;
+    padding: 14.5px 16px;
     color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.25px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(190, 18, 60, 0.42);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35), 0 2px 8px rgba(136, 19, 55, 0.35);
     transition: all 0.22s ease;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
-.btn-entry-punch:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(190, 18, 60, 0.65);
+.app-btn-primary svg {
+    width: 18px;
+    height: 18px;
+}
+
+.app-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5), 0 3px 10px rgba(136, 19, 55, 0.5);
     filter: brightness(1.08);
 }
 
-.btn-entry-punch:active {
+.app-btn-primary:active {
     transform: translateY(0);
     filter: brightness(0.95);
 }
 
-.btn-entry-punch.punched {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45) !important;
+.app-btn-primary.confirmed {
+    background: linear-gradient(90deg, #059669 0%, #10b981 100%) !important;
+    border: 1.5px solid #34d399 !important;
+    box-shadow: 0 4px 22px rgba(16, 185, 129, 0.5) !important;
+    color: #ffffff !important;
 }
 
-.entry-geo-caption {
-    font-size: 10px;
-    color: #71717a;
-    text-align: center;
-    margin: 2px 0 4px;
-    font-weight: 500;
-}
-
-/* Botão: Meus Registros de Presenças */
-.btn-entry-history {
+.app-btn-secondary {
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #1e2029;
-    border-radius: 13px;
-    padding: 10.5px 14px;
+    border: 1px solid rgba(245, 146, 66, 0.28);
+    background: #161720;
+    border-radius: 15px;
+    padding: 13.5px 16px;
     color: #f1f5f9;
-    font-size: 11.5px;
+    font-size: 13px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -2653,53 +2912,52 @@ header {
     gap: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
-.btn-entry-history:hover {
-    background: #272a38;
-    border-color: rgba(255, 255, 255, 0.2);
+.app-btn-secondary svg {
+    width: 16px;
+    height: 16px;
+    color: #f59e0b;
+}
+
+.app-btn-secondary:hover {
+    background: #20222e;
+    border-color: rgba(245, 146, 66, 0.48);
     color: #ffffff;
     transform: translateY(-1px);
 }
 
-/* Card: Carga Horária Semanal */
-.phone-hours-card {
-    background: rgba(28, 28, 33, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 13px 16px;
+.app-btn-secondary svg {
+    color: #f59e0b;
 }
 
-.phone-hours-row {
+/* Rodapé GPS */
+.app-gps-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.phone-hours-val {
-    color: #f89642;
-    font-family: monospace;
-    font-size: 12.5px;
-    font-weight: 700;
-}
-
-.phone-progress-bar {
+    gap: 8px;
+    padding: 3px 2px 0 2px;
     width: 100%;
-    height: 8px;
-    background: #232329;
-    border-radius: 6px;
-    margin-top: 9px;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
-.phone-progress-fill {
-    width: 95%;
-    height: 100%;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #9F243C 0%, #f89642 60%, #fae285 100%);
+.app-gps-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.85);
+    flex-shrink: 0;
+}
+
+.app-gps-text {
+    font-size: 11.5px;
+    color: #a1a1aa;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
 }
 
 
@@ -4640,21 +4898,50 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .statement-left h2 {
+        font-size: clamp(42px, 11vw, 56px);
+        letter-spacing: -2px;
+    }
+
+    .statement-subtitle {
+        font-size: 16.5px;
+        margin-top: 20px;
+    }
+
+    .statement-badge-item {
+        font-size: 13px;
+        padding: 9px 16px;
+    }
+
+    .phone-mockup {
+        margin-left: 0;
+    }
+
     .phone-chassis {
         width: 100%;
-        max-width: 320px;
+        max-width: 350px;
         padding: 10px;
-        border-radius: 42px;
+        border-radius: 44px;
     }
 
-    .phone-screen {
-        border-radius: 34px;
-        padding: 12px 14px 18px 14px;
+    .app-mobile-screen {
+        border-radius: 36px;
+        padding: 16px 12px 16px 12px;
+        min-height: 630px;
+        gap: 13px;
     }
 
-    .phone-clock-time,
-    .mockup-clock-time {
+    .app-punch-container {
+        padding: 14px 12px;
+        gap: 13px;
+    }
+
+    .app-clock-time {
         font-size: 32px;
+    }
+
+    .app-row-address {
+        max-width: 110px;
     }
 }
 
