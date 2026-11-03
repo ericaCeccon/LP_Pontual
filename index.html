@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR" class="modo-escuro" data-theme="dark">
 
 <head>
@@ -72,7 +72,7 @@
         </div>
 
 
-        <nav class="nav-alt">
+        <nav class="nav-alt" id="mainNav">
 
             <a href="#inicio" class="active">Início</a>
 
@@ -169,9 +169,26 @@
                 <span>↗</span>
             </button>
 
+
+            <!-- BOTÃO MENU SANDUÍCHE (MOBILE) -->
+
+            <button
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                aria-label="Abrir menu de navegação"
+                aria-expanded="false"
+                aria-controls="mainNav">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
         </div>
 
     </header>
+
+    <!-- BACKDROP DO MENU MOBILE -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
 
     <!-- HERO V2 -->
@@ -332,7 +349,7 @@
                                             <span class="app-avatar-online"></span>
                                         </div>
                                         <button type="button" class="app-theme-icon-btn" aria-label="Alternar tema">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <svg class="app-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <circle cx="12" cy="12" r="5"></circle>
                                                 <line x1="12" y1="1" x2="12" y2="3"></line>
                                                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -342,6 +359,9 @@
                                                 <line x1="21" y1="12" x2="23" y2="12"></line>
                                                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                            </svg>
+                                            <svg class="app-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                                             </svg>
                                         </button>
                                     </div>
@@ -676,11 +696,7 @@
                         <!-- ESPAÇO PARA FOTO DO PROJETO -->
                         <div class="resource-details-media">
                             <div class="project-photo-wrapper">
-                                
-                                <div class="project-photo-container">
-                                    <img src="img/relatorio.png" alt="Preview do Módulo de Ponto Pontual" class="resource-image" loading="lazy">
-                                </div>
-                                
+                                <img src="img/relatorio.png" alt="Preview do Módulo de Ponto Pontual" class="resource-image" loading="lazy">
                             </div>
                         </div>
 
@@ -793,11 +809,10 @@
                             </ul>
                         </div>
 
-                        
-                                    <img src="img/colaboradores.png" alt="Preview do Módulo de Gestão Pontual" class="resource-image" loading="lazy" width="300">
-                                
-                                   
-                                </div>
+                        <!-- ESPAÇO PARA FOTO DO PROJETO -->
+                        <div class="resource-details-media">
+                            <div class="project-photo-wrapper">
+                                <img src="img/colaboradores.png" alt="Preview do Módulo de Gestão Pontual" class="resource-image" loading="lazy">
                             </div>
                         </div>
 
@@ -827,7 +842,7 @@
                 <strong>Mais controle.</strong>
 
                 <img
-        src="img/logo_pontual_transparente.png"
+        src="img/logo_dark.png"
         alt="Logo Pontual"
         class="solution-logo"
     >
@@ -980,13 +995,14 @@
                  
             </div>
             <span class="footer-bullet">•</span>
-            <span class="footer-tagline">Sistema Corporativo de Gestão de Escalas & Ponto Digital GPS</span>
+            <span class="footer-tagline">Sistema Corporativo de Gestão de Escalas</span>
         </div>
 
         <div class="footer-links">
             <a href="#inicio">Início</a>
             <a href="#funcionalidades">Recursos</a>
             <a href="#como-funciona">Sobre</a>
+            <a href="perfil.html">Perfis</a>
             <a href="#inicio" class="footer-link-highlight">Portal de Acesso</a>
         </div>
 
@@ -1004,60 +1020,25 @@
         </svg>
     </button>
 
+    <!-- MODAL LIGHTBOX PARA VISUALIZAÇÃO AMPLIADA DE IMAGENS NO MOBILE/DESKTOP -->
+    <div class="image-lightbox-modal" id="imageLightboxModal" aria-hidden="true" role="dialog" aria-label="Visualização ampliada">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-container">
+            <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Fechar visualização">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="lightbox-image-wrap">
+                <img src="" alt="Visualização ampliada" id="lightboxImage" class="lightbox-img">
+            </div>
+            <div class="lightbox-caption" id="lightboxCaption">Toque fora ou no X para fechar</div>
+        </div>
+    </div>
+
     <!-- SCRIPT PRINCIPAL -->
     <script src="script.js"></script>
 
 </body>
-
-<script>
-    // Atualiza relógio do celular em tempo real
-    function updateClock() {
-      const now = new Date();
-      const timeStr = now.toLocaleTimeString('pt-BR');
-      const shortTimeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-      
-      const clockEl = document.getElementById('screen-clock');
-      const topTimeEl = document.getElementById('screen-top-time');
-      
-      if (clockEl) clockEl.innerText = timeStr;
-      if (topTimeEl) topTimeEl.innerText = shortTimeStr;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    // Simulação do Botão de Bater Ponto no Mockup do Celular
-    let punchStatus = 'idle';
-    function triggerPunchSimulation() {
-      const btn = document.getElementById('interactive-punch-btn');
-      const text = document.getElementById('punch-btn-text');
-      const pill = document.getElementById('shift-status-pill');
-
-      if (punchStatus === 'punched') {
-        punchStatus = 'idle';
-        btn.classList.remove('punched');
-        btn.classList.remove('validating');
-        text.innerText = 'REGISTRAR PONTO AGORA';
-        pill.innerText = '08:00 - 17:00';
-        pill.style.background = 'rgba(245, 146, 66, 0.2)';
-        pill.style.color = 'var(--lp-creme)';
-        return;
-      }
-
-      punchStatus = 'validating';
-      btn.classList.add('validating');
-      text.innerText = '📡 VALIDANDO SATÉLITE GPS...';
-
-      setTimeout(() => {
-        punchStatus = 'punched';
-        btn.classList.remove('validating');
-        btn.classList.add('punched');
-        text.innerText = 'PRESENÇA CONFIRMADA ✓';
-        pill.innerText = 'Presença Registrada';
-        pill.style.background = 'rgba(16, 185, 129, 0.2)';
-        pill.style.color = '#6EE7B7';
-      }, 1100);
-    }
-  </script>
-
-
 </html>

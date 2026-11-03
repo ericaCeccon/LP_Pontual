@@ -3,24 +3,31 @@
 // ============================
 
 const themeToggle = document.getElementById('themeToggle');
+const appThemeBtn = document.querySelector('.app-theme-icon-btn');
 const htmlElement = document.documentElement;
 
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const isLight = htmlElement.getAttribute('data-theme') === 'light' || htmlElement.classList.contains('modo-claro');
+function toggleSiteTheme() {
+    const isLight = htmlElement.getAttribute('data-theme') === 'light' || htmlElement.classList.contains('modo-claro');
 
-        if (isLight) {
-            htmlElement.setAttribute('data-theme', 'dark');
-            htmlElement.classList.remove('modo-claro');
-            htmlElement.classList.add('modo-escuro');
-            localStorage.setItem('pontual-theme', 'dark');
-        } else {
-            htmlElement.setAttribute('data-theme', 'light');
-            htmlElement.classList.remove('modo-escuro');
-            htmlElement.classList.add('modo-claro');
-            localStorage.setItem('pontual-theme', 'light');
-        }
-    });
+    if (isLight) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        htmlElement.classList.remove('modo-claro');
+        htmlElement.classList.add('modo-escuro');
+        localStorage.setItem('pontual-theme', 'dark');
+    } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        htmlElement.classList.remove('modo-escuro');
+        htmlElement.classList.add('modo-claro');
+        localStorage.setItem('pontual-theme', 'light');
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleSiteTheme);
+}
+
+if (appThemeBtn) {
+    appThemeBtn.addEventListener('click', toggleSiteTheme);
 }
 
 // ============================
@@ -199,7 +206,7 @@ window.triggerPunchSimulation = function () {
 
     btn.classList.add('confirmed');
     const originalText = btnText.textContent;
-    btnText.textContent = 'PRESENÇA CONFIRMADA ✓';
+    btnText.textContent = 'SAÍDA CONFIRMADA ✓';
 
     const originalStatusText = statusText ? statusText.textContent : 'Expediente em andamento';
 
@@ -270,4 +277,106 @@ profileNavButtons.forEach(item => {
         });
     }
 });
+
+// ============================================
+// LIGHTBOX MODAL PARA IMAGENS (MOBILE & DESKTOP)
+// ============================================
+const lightboxModal = document.getElementById('imageLightboxModal');
+const lightboxImg = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+if (lightboxModal && lightboxImg) {
+    const clickableImages = document.querySelectorAll('.resource-image, .project-photo-wrapper img');
+    clickableImages.forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || 'Visualização do Módulo Pontual';
+            if (lightboxCaption) {
+                lightboxCaption.textContent = img.alt || 'Toque fora ou no X para fechar';
+            }
+            lightboxModal.classList.add('active');
+            lightboxModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeLightbox = () => {
+        lightboxModal.classList.remove('active');
+        lightboxModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            if (lightboxImg) lightboxImg.src = '';
+        }, 200);
+    };
+
+    if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+}
+
+// ============================================
+// MENU SANDUÍCHE (MOBILE)
+// ============================================
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mainNav = document.getElementById('mainNav');
+const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+if (mobileMenuToggle && mainNav) {
+    const toggleMenu = (open) => {
+        const isOpen = open !== undefined ? open : !mainNav.classList.contains('active');
+        if (isOpen) {
+            mainNav.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            if (mobileNavBackdrop) mobileNavBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mainNav.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (mobileNavBackdrop) mobileNavBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    if (mobileNavBackdrop) {
+        mobileNavBackdrop.addEventListener('click', () => toggleMenu(false));
+    }
+
+    // Fechar ao clicar em qualquer link da navegação
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu(false);
+        });
+    });
+
+    // Fechar com a tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+            toggleMenu(false);
+        }
+    });
+
+    // Fechar ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+            toggleMenu(false);
+        }
+    });
+}
+
+
 
