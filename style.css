@@ -1,4 +1,4 @@
-﻿/* =========================================
+/* =========================================
    LANDING HERO ALT
 ========================================= */
 .landing-alt {
@@ -2783,6 +2783,10 @@ header {
     height: 16px;
 }
 
+.app-theme-icon-btn .app-icon-moon {
+    display: none;
+}
+
 .app-theme-icon-btn:hover {
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0.25);
@@ -5287,6 +5291,378 @@ footer {
     background: #f7f3ed;
     border-color: #dfd8cc;
     color: #2b2520;
+}
+
+/* ===================================================
+   MODO CLARO - MOCKUP DO CELULAR (APP PONTUAL)
+   =================================================== */
+
+[data-theme="light"] .phone-chassis,
+.modo-claro .phone-chassis {
+    box-shadow:
+        0 30px 70px -12px rgba(20, 20, 30, 0.28),
+        0 14px 32px -6px rgba(20, 20, 30, 0.16),
+        0 0 45px rgba(245, 146, 66, 0.18),
+        inset 0 0 2px 1px rgba(255, 255, 255, 0.18),
+        inset 0 0 12px rgba(0, 0, 0, 0.75);
+}
+
+[data-theme="light"] .app-mobile-screen,
+.modo-claro .app-mobile-screen {
+    background: #f5f7fb;
+    color: #0f172a;
+    box-shadow: inset 0 0 10px rgba(15, 23, 42, 0.06);
+}
+
+/* 1. Topo do App no Modo Claro */
+[data-theme="light"] .app-top-header,
+.modo-claro .app-top-header {
+    background: #ffffff;
+    margin: -20px -18px 0 -18px;
+    padding: 18px 18px 12px 18px;
+    width: calc(100% + 36px);
+    border-bottom: 1px solid #e8ecf2;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+[data-theme="light"] .app-brand-logo-img,
+.modo-claro .app-brand-logo-img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(28%) saturate(2200%) hue-rotate(192deg) brightness(94%) contrast(98%);
+}
+
+[data-theme="light"] .app-avatar-img,
+.modo-claro .app-avatar-img {
+    border-color: #e2e8f0;
+}
+
+[data-theme="light"] .app-avatar-online,
+.modo-claro .app-avatar-online {
+    border-color: #ffffff;
+    background: #10B981;
+}
+
+[data-theme="light"] .app-theme-icon-btn,
+.modo-claro .app-theme-icon-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    border-radius: 12px;
+}
+
+[data-theme="light"] .app-theme-icon-btn:hover,
+.modo-claro .app-theme-icon-btn:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+[data-theme="light"] .app-theme-icon-btn .app-icon-sun,
+.modo-claro .app-theme-icon-btn .app-icon-sun {
+    display: none;
+}
+
+[data-theme="light"] .app-theme-icon-btn .app-icon-moon,
+.modo-claro .app-theme-icon-btn .app-icon-moon {
+    display: block;
+}
+
+/* 2. Barra de Abas no Modo Claro */
+[data-theme="light"] .app-tab-navigation,
+.modo-claro .app-tab-navigation {
+    background: #ffffff;
+    margin: -16px -18px 0 -18px;
+    padding: 10px 18px 10px 18px;
+    width: calc(100% + 36px);
+    border-bottom: 1px solid #edf0f5;
+}
+
+[data-theme="light"] .app-nav-tab,
+.modo-claro .app-nav-tab {
+    color: #5b677a;
+}
+
+[data-theme="light"] .app-nav-tab:hover,
+.modo-claro .app-nav-tab:hover {
+    color: #1e293b;
+}
+
+[data-theme="light"] .app-nav-tab.active,
+.modo-claro .app-nav-tab.active {
+    background: linear-gradient(135deg, #f5e1e4 0%, #fceddc 100%);
+    border: 1px solid rgba(224, 83, 60, 0.12);
+    color: #7c192b;
+    border-radius: 14px;
+    padding: 9px 12px;
+    box-shadow: none;
+}
+
+[data-theme="light"] .app-nav-tab.active::after,
+.modo-claro .app-nav-tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: #881b2f;
+}
+
+[data-theme="light"] .tab-notification-pill,
+.modo-claro .tab-notification-pill {
+    border-color: #ffffff;
+}
+
+/* 3. Card Principal de Ponto no Modo Claro */
+[data-theme="light"] .app-punch-container,
+.modo-claro .app-punch-container {
+    background: linear-gradient(180deg, #fffef9 0%, #fffbf0 60%, #fffdf8 100%);
+    border: 1px solid #f0e4c8;
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .app-clock-bar,
+.modo-claro .app-clock-bar {
+    background: #df543b;
+}
+
+[data-theme="light"] .app-clock-time,
+.modo-claro .app-clock-time {
+    color: #111c2d;
+}
+
+[data-theme="light"] .app-clock-date,
+.modo-claro .app-clock-date {
+    color: #2c384b;
+    font-weight: 700;
+}
+
+/* Badge de Status no Modo Claro */
+[data-theme="light"] .app-status-badge,
+.modo-claro .app-status-badge {
+    background: #fdf6e4;
+    border: 1px solid #edd89e;
+    color: #7c192b;
+    font-weight: 700;
+}
+
+[data-theme="light"] .app-status-badge svg,
+.modo-claro .app-status-badge svg {
+    color: #ea963e;
+}
+
+[data-theme="light"] .app-status-badge.shift-ended,
+.modo-claro .app-status-badge.shift-ended {
+    background: rgba(16, 185, 129, 0.14);
+    border-color: rgba(16, 185, 129, 0.45);
+    color: #065f46;
+}
+
+[data-theme="light"] .app-status-badge.shift-ended svg,
+.modo-claro .app-status-badge.shift-ended svg {
+    color: #059669;
+}
+
+/* Stepper da Jornada no Modo Claro */
+[data-theme="light"] .app-step-bullet,
+.modo-claro .app-step-bullet {
+    border: 1.5px solid #d5dde8;
+    background: #edf2f7;
+}
+
+[data-theme="light"] .app-step-dot,
+.modo-claro .app-step-dot {
+    background: #94a3b8;
+}
+
+[data-theme="light"] .app-step-item.step-completed .app-step-bullet,
+.modo-claro .app-step-item.step-completed .app-step-bullet {
+    border-color: #df543b;
+    background: rgba(223, 84, 59, 0.12);
+}
+
+[data-theme="light"] .app-step-item.step-completed .app-step-dot,
+.modo-claro .app-step-item.step-completed .app-step-dot {
+    background: #df543b;
+}
+
+[data-theme="light"] .app-step-label,
+.modo-claro .app-step-label {
+    color: #526071;
+    font-weight: 600;
+}
+
+[data-theme="light"] .app-step-item.step-completed .app-step-label,
+.modo-claro .app-step-item.step-completed .app-step-label {
+    color: #334155;
+    font-weight: 600;
+}
+
+[data-theme="light"] .app-step-val,
+.modo-claro .app-step-val {
+    color: #64748b;
+    font-weight: 600;
+}
+
+[data-theme="light"] .app-step-item.step-completed .app-step-val,
+.modo-claro .app-step-item.step-completed .app-step-val {
+    color: #0f172a;
+    font-weight: 800;
+}
+
+[data-theme="light"] .app-step-item.shift-end-completed .app-step-val,
+.modo-claro .app-step-item.shift-end-completed .app-step-val {
+    color: #059669;
+}
+
+[data-theme="light"] .app-step-connector,
+.modo-claro .app-step-connector {
+    background: #dce3ec;
+}
+
+[data-theme="light"] .app-step-connector.active,
+.modo-claro .app-step-connector.active {
+    background: #df543b;
+}
+
+/* Card Interno de Detalhes (Turno + Local) no Modo Claro */
+[data-theme="light"] .app-details-card,
+.modo-claro .app-details-card {
+    background: #f8f9fc;
+    border: 1px solid #eaecf2;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .app-card-accent-bar,
+.modo-claro .app-card-accent-bar {
+    background: #df543b;
+}
+
+[data-theme="light"] .app-card-row:first-of-type .app-row-circle-icon,
+.modo-claro .app-card-row:first-of-type .app-row-circle-icon {
+    background: #faecc4;
+    border: 1px solid #f2de9b;
+    color: #7c192b;
+}
+
+[data-theme="light"] .app-card-row:first-of-type .app-row-circle-icon svg,
+.modo-claro .app-card-row:first-of-type .app-row-circle-icon svg {
+    color: #7c192b;
+}
+
+[data-theme="light"] .app-card-row.row-location .app-row-circle-icon,
+.modo-claro .app-card-row.row-location .app-row-circle-icon {
+    background: #fce4e6;
+    border: 1px solid #f6cdd1;
+    color: #881b2f;
+}
+
+[data-theme="light"] .app-card-row.row-location .app-row-circle-icon svg,
+.modo-claro .app-card-row.row-location .app-row-circle-icon svg {
+    color: #881b2f;
+}
+
+[data-theme="light"] .app-row-label,
+.modo-claro .app-row-label {
+    color: #64748b;
+    font-weight: 600;
+}
+
+[data-theme="light"] .app-row-val,
+.modo-claro .app-row-val {
+    color: #0f172a;
+}
+
+[data-theme="light"] .app-row-pill,
+.modo-claro .app-row-pill {
+    background: #ffffff;
+    border: 1px solid #e9e2d8;
+    color: #7c192b;
+    font-weight: 700;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .app-row-address,
+.modo-claro .app-row-address {
+    color: #64748b;
+}
+
+[data-theme="light"] .app-btn-directions,
+.modo-claro .app-btn-directions {
+    background: #ffffff;
+    border: 1px solid #dce2ec;
+    color: #111c2d;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .app-btn-directions:hover,
+.modo-claro .app-btn-directions:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+[data-theme="light"] .app-btn-directions svg,
+.modo-claro .app-btn-directions svg {
+    color: #d9822b;
+}
+
+/* Botões Primário, Secundário e Rodapé GPS no Modo Claro */
+[data-theme="light"] .app-btn-primary,
+.modo-claro .app-btn-primary {
+    background: linear-gradient(90deg, #5e0b1c 0%, #881337 32%, #d95b26 75%, #f59242 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(150, 24, 60, 0.22);
+}
+
+[data-theme="light"] .app-btn-secondary,
+.modo-claro .app-btn-secondary {
+    background: #ffffff;
+    border: 1px solid #dfe5ee;
+    color: #1e293b;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.03);
+}
+
+[data-theme="light"] .app-btn-secondary:hover,
+.modo-claro .app-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+[data-theme="light"] .app-btn-secondary svg,
+.modo-claro .app-btn-secondary svg {
+    color: #d9822b;
+}
+
+[data-theme="light"] .app-gps-dot,
+.modo-claro .app-gps-dot {
+    background: #f59e0b;
+    box-shadow: none;
+}
+
+[data-theme="light"] .app-gps-text,
+.modo-claro .app-gps-text {
+    color: #334155;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    [data-theme="light"] .app-top-header,
+    .modo-claro .app-top-header {
+        margin: -16px -12px 0 -12px;
+        padding: 14px 14px 10px 14px;
+        width: calc(100% + 24px);
+    }
+
+    [data-theme="light"] .app-tab-navigation,
+    .modo-claro .app-tab-navigation {
+        margin: -13px -12px 0 -12px;
+        padding: 8px 14px 8px 14px;
+        width: calc(100% + 24px);
+    }
 }
 
 .btn-creme-pill {

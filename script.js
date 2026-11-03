@@ -3,24 +3,31 @@
 // ============================
 
 const themeToggle = document.getElementById('themeToggle');
+const appThemeBtn = document.querySelector('.app-theme-icon-btn');
 const htmlElement = document.documentElement;
 
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const isLight = htmlElement.getAttribute('data-theme') === 'light' || htmlElement.classList.contains('modo-claro');
+function toggleSiteTheme() {
+    const isLight = htmlElement.getAttribute('data-theme') === 'light' || htmlElement.classList.contains('modo-claro');
 
-        if (isLight) {
-            htmlElement.setAttribute('data-theme', 'dark');
-            htmlElement.classList.remove('modo-claro');
-            htmlElement.classList.add('modo-escuro');
-            localStorage.setItem('pontual-theme', 'dark');
-        } else {
-            htmlElement.setAttribute('data-theme', 'light');
-            htmlElement.classList.remove('modo-escuro');
-            htmlElement.classList.add('modo-claro');
-            localStorage.setItem('pontual-theme', 'light');
-        }
-    });
+    if (isLight) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        htmlElement.classList.remove('modo-claro');
+        htmlElement.classList.add('modo-escuro');
+        localStorage.setItem('pontual-theme', 'dark');
+    } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        htmlElement.classList.remove('modo-escuro');
+        htmlElement.classList.add('modo-claro');
+        localStorage.setItem('pontual-theme', 'light');
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleSiteTheme);
+}
+
+if (appThemeBtn) {
+    appThemeBtn.addEventListener('click', toggleSiteTheme);
 }
 
 // ============================
@@ -199,7 +206,7 @@ window.triggerPunchSimulation = function () {
 
     btn.classList.add('confirmed');
     const originalText = btnText.textContent;
-    btnText.textContent = 'PRESENÇA CONFIRMADA ✓';
+    btnText.textContent = 'SAÍDA CONFIRMADA ✓';
 
     const originalStatusText = statusText ? statusText.textContent : 'Expediente em andamento';
 
