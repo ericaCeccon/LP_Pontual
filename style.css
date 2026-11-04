@@ -680,15 +680,15 @@
         box-sizing: border-box !important;
     }
 
-    /* Esquerda: Logo Pontual compacta */
+    /* Esquerda: Logo Pontual */
     .logos-alt {
         display: flex !important;
         align-items: center !important;
-        gap: 6px !important;
+        gap: 8px !important;
         margin-left: 0 !important;
         flex-shrink: 0 !important;
         height: auto !important;
-        max-height: 28px !important;
+        max-height: 38px !important;
     }
 
     .logos-alt .logo {
@@ -698,15 +698,15 @@
     }
 
     .logos-alt .logo:first-child img {
-        width: 25px !important;
-        height: 25px !important;
-        max-width: 25px !important;
-        max-height: 25px !important;
+        width: 34px !important;
+        height: 34px !important;
+        max-width: 34px !important;
+        max-height: 34px !important;
     }
 
     .logos-alt .logo:last-child img {
-        width: 90px !important;
-        max-width: 90px !important;
+        width: 114px !important;
+        max-width: 114px !important;
         height: auto !important;
     }
 
@@ -836,7 +836,7 @@
     /* Menu Dropdown Aberto pelo Botão Sanduíche (Apenas opções de navegação) */
     .nav-alt {
         position: fixed !important;
-        top: 52px !important;
+        top: 58px !important;
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
@@ -929,8 +929,8 @@
         width: 100% !important;
         min-height: auto !important;
         height: auto !important;
-        padding-top: 4px !important;
-        padding-bottom: 12px !important;
+        padding-top: 24px !important;
+        padding-bottom: 32px !important;
         border-radius: 0 !important;
         overflow: visible !important;
         position: relative !important;
@@ -941,7 +941,7 @@
     }
 
     .hero-content-alt {
-        padding: 16px 16px 6px 16px !important;
+        padding: 28px 20px 20px 20px !important;
         position: relative !important;
         z-index: 2 !important;
         width: 100% !important;
@@ -951,23 +951,28 @@
     }
 
     .tag-alt {
-        font-size: 8px;
+        font-size: 9px;
         text-align: center;
     }
 
     .hero-content-alt h1 {
-        font-size: clamp(34px, 9.5vw, 42px) !important;
-        letter-spacing: -1.2px !important;
-        line-height: 1.08 !important;
-        margin-bottom: 10px !important;
+        font-size: clamp(44px, 11.8vw, 56px) !important;
+        letter-spacing: -1.8px !important;
+        line-height: 1.04 !important;
+        margin-bottom: 16px !important;
     }
 
     .hero-content-alt p {
-        font-size: 14px !important;
-        line-height: 1.45 !important;
-        max-width: 310px !important;
-        margin: 0 auto 16px auto !important;
-        color: rgba(255, 255, 255, 0.85) !important;
+        font-size: 15.5px !important;
+        line-height: 1.55 !important;
+        max-width: 345px !important;
+        margin: 0 auto 24px auto !important;
+        color: rgba(255, 255, 255, 0.88) !important;
+    }
+
+    [data-theme="light"] .hero-content-alt p,
+    .modo-claro .hero-content-alt p {
+        color: var(--text-secondary) !important;
     }
 
     .hero-buttons-alt,
@@ -984,10 +989,10 @@
     .btn-secondary-alt {
         width: auto !important;
         max-width: 90% !important;
-        padding: 11px 24px !important;
-        font-size: 13px !important;
+        padding: 13.5px 28px !important;
+        font-size: 14px !important;
         font-weight: 700 !important;
-        border-radius: 25px !important;
+        border-radius: 30px !important;
         justify-content: center !important;
         text-align: center !important;
         display: inline-flex !important;
@@ -1000,14 +1005,14 @@
 
     /* Marquee e Big-Statement conectados à hero quase sem vão ("como se estivessem juntos") */
     .marquee {
-        padding: 8px 0 !important;
+        padding: 12px 0 !important;
         margin: 0 !important;
     }
 
     .big-statement {
         min-height: auto !important;
-        padding-top: 18px !important;
-        padding-bottom: 40px !important;
+        padding-top: 28px !important;
+        padding-bottom: 44px !important;
         margin-top: 0 !important;
     }
 

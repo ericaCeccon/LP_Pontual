@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" class="modo-escuro" data-theme="dark">
 
 <head>
@@ -56,7 +56,7 @@
             </a>
         </div>
 
-        <nav class="nav-alt">
+        <nav class="nav-alt" id="mainNav">
             <a href="index.html#inicio">Início</a>
             <a href="index.html#funcionalidades">Funcionalidades</a>
             <a href="index.html#sobre">Sobre nós</a>
@@ -89,8 +89,23 @@
                 Entrar
                 <span>↗</span>
             </button>
+
+            <!-- BOTÃO MENU SANDUÍCHE (MOBILE) -->
+            <button
+                class="mobile-menu-toggle"
+                id="mobileMenuToggle"
+                aria-label="Abrir menu de navegação"
+                aria-expanded="false"
+                aria-controls="mainNav">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
         </div>
     </header>
+
+    <!-- BACKDROP DO MENU MOBILE -->
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
     
 
