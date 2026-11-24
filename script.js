@@ -78,7 +78,7 @@ botoes.forEach(botao => {
 // ============================
 
 const animElements = document.querySelectorAll(
-    '.floating-card, .process-item, .solution-left, .solution-right, .big-statement h2, .section-top'
+    '.floating-card, .process-item, .solution-left, .solution-right, .big-statement h2, .section-top, .pricing-header, .pricing-card'
 );
 
 const observer = new IntersectionObserver(
@@ -375,6 +375,80 @@ if (mobileMenuToggle && mainNav) {
         if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
             toggleMenu(false);
         }
+    });
+}
+
+
+// ============================================
+// PLANOS DE PAGAMENTO (MENSAL / ANUAL & CTA)
+// ============================================
+const billingButtons = document.querySelectorAll('.billing-btn');
+const pricingAmounts = document.querySelectorAll('.pricing-amount[data-mensal]');
+const pricingNotes = document.querySelectorAll('.pricing-billing-note[data-mensal]');
+const pricingCtaButtons = document.querySelectorAll('.pricing-cta-btn');
+const pricingToast = document.getElementById('pricingToast');
+const pricingToastText = document.getElementById('pricingToastText');
+
+let currentBillingCycle = 'mensal';
+let pricingToastTimer = null;
+
+if (billingButtons.length > 0) {
+    billingButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selected = btn.getAttribute('data-billing');
+            if (!selected || selected === currentBillingCycle) return;
+
+            currentBillingCycle = selected;
+
+            billingButtons.forEach(other => {
+                const isActive = other === btn;
+                other.classList.toggle('active', isActive);
+                other.setAttribute('aria-pressed', String(isActive));
+            });
+
+            pricingAmounts.forEach(amountEl => {
+                const nextValue = amountEl.getAttribute(`data-${selected}`);
+                if (!nextValue) return;
+                amountEl.classList.add('price-updating');
+                setTimeout(() => {
+                    amountEl.textContent = nextValue;
+                    amountEl.classList.remove('price-updating');
+                }, 140);
+            });
+
+            pricingNotes.forEach(noteEl => {
+                const nextNote = noteEl.getAttribute(`data-${selected}`);
+                if (nextNote) {
+                    noteEl.textContent = nextNote;
+                }
+            });
+        });
+    });
+}
+
+if (pricingCtaButtons.length > 0) {
+    pricingCtaButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const planName = btn.getAttribute('data-plan') || 'Pontual';
+            const cycleLabel = currentBillingCycle === 'anual' ? 'Anual · 20% OFF' : 'Mensal';
+            const message = planName === 'Corporativo'
+                ? 'Plano Corporativo selecionado — nossa equipe comercial será conectada aqui.'
+                : `Plano ${planName} (${cycleLabel}) selecionado — o checkout Pontual será conectado aqui.`;
+
+            if (pricingToast && pricingToastText) {
+                pricingToastText.textContent = message;
+                pricingToast.classList.add('visible');
+                pricingToast.setAttribute('aria-hidden', 'false');
+
+                if (pricingToastTimer) clearTimeout(pricingToastTimer);
+                pricingToastTimer = setTimeout(() => {
+                    pricingToast.classList.remove('visible');
+                    pricingToast.setAttribute('aria-hidden', 'true');
+                }, 4200);
+            } else {
+                alert(message);
+            }
+        });
     });
 }
 
